@@ -11,12 +11,16 @@ body {
   text-align: center;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
   max-width: 1145px;
 }
 
 .hero {
-  max-width: 1280px;
+  width: 100%;
 }
 
 .capital-text {
@@ -35,7 +39,6 @@ body {
 
 .menu-link {
   color: #FF0000;
-  text-decoration: none;
   letter-spacing: 2.7px;
   font-size: 18px;
   line-height: 18px;
