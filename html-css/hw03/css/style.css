@@ -13,7 +13,7 @@ html {
   margin: 0 auto;
 }
 
-a {
+a, a:hover {
   text-decoration: none;
   color: inherit;
 }
@@ -40,13 +40,13 @@ a {
 
 .navmenu-list {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   color: #FFF;
   font-size: 24px;
   line-height: 28px;
 }
 
-.navmenu-list > li {
+.navmenu-item {
   display: block;
   padding-left: 40px;
   padding-right: 40px;
@@ -54,9 +54,8 @@ a {
   padding-bottom: 22px;
   border-left: 1px solid #FFF;
 }
-
-.navmenu-list > li:last-child {
-  margin-right: 150px;
+.navmenu-item:hover {
+  background-color: #222F3A;
 }
 
 main {
@@ -66,9 +65,9 @@ main {
 }
 
 aside {
+  align-self: flex-start;
   border: 1px solid #000000;
   width: 28%;
-  max-height: 400px;
 }
 
 .about-item {
@@ -76,7 +75,14 @@ aside {
   line-height: 27px;
   padding: 26px 44px;
   color: #485863;
+  transition: padding .5s ease-out;
 }
+.about-item:hover {
+  background-color: #DBDBDB;
+  color: #35444F;
+  padding-left: 66px;
+}
+
 
 article {
   width: 69%;
@@ -87,13 +93,22 @@ article > * {
 }
 
 .hero {
+  display: flex;
   height: 530px;
-  background-image: url("../img/hero.png");
+  /* background-image: url("../img/hero.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center; */
   margin-left: auto;
   margin-right: auto;
   border: 1px solid #000000;
+}
+.hero > img {
+  display: block;
+  margin: auto;
+  transition: transform .5s ease-out;
+}
+.hero > img:hover {
+  transform: scale(1.1);
 }
 
 .art-text {
@@ -110,10 +125,14 @@ footer {
   color: #0C1927;
 }
 
-.footabout > li {
+.footabout-item {
   margin-right: 30px;
   font-size: 28px;
   display: inline-block;
+}
+.footabout-item:hover {
+  color: #3181A6;
+  border-bottom: 1px solid #3181A6;
 }
 
 .copyright {
