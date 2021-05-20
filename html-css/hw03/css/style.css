@@ -48,14 +48,17 @@ a, a:hover {
 
 .navmenu-item {
   display: block;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 22px;
-  padding-bottom: 22px;
   border-left: 1px solid #FFF;
 }
 .navmenu-item:hover {
   background-color: #222F3A;
+}
+.navmenu-item > a {
+  display: block;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 22px;
+  padding-bottom: 22px;
 }
 
 main {
@@ -73,7 +76,6 @@ aside {
 .about-item {
   font-size: 27px;
   line-height: 27px;
-  padding: 26px 44px;
   color: #485863;
   transition: padding-left .5s ease-out;
 }
@@ -81,6 +83,10 @@ aside {
   background-color: #DBDBDB;
   color: #35444F;
   padding-left: 66px;
+}
+.about-item > a {
+  display: block;
+  padding: 26px 44px;
 }
 
 
