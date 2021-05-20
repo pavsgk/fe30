@@ -75,7 +75,7 @@ aside {
   line-height: 27px;
   padding: 26px 44px;
   color: #485863;
-  transition: padding .5s ease-out;
+  transition: padding-left .5s ease-out;
 }
 .about-item:hover {
   background-color: #DBDBDB;
