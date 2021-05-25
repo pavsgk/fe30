@@ -13,11 +13,6 @@ html {
   margin: 0 auto;
 }
 
-a, a:hover {
-  text-decoration: none;
-  color: inherit;
-}
-
 .logo-text {
   color: #000000;
   font-size: 80px;
@@ -70,7 +65,7 @@ main {
 aside {
   align-self: flex-start;
   border: 1px solid #000000;
-  width: 28%;
+  width: 27%;
 }
 
 .about-item {
@@ -81,14 +76,13 @@ aside {
 }
 .about-item:hover {
   background-color: #DBDBDB;
-  color: #35444F;
   padding-left: 66px;
+  color: #35444F;
 }
 .about-item > a {
   display: block;
   padding: 26px 44px;
 }
-
 
 article {
   width: 69%;
@@ -126,7 +120,7 @@ article > * {
 footer {
   display: flex;
   justify-content: space-between;
-  padding: 15px 40px;
+  padding: 18px 40px;
   background-color: rgba(99, 105, 110, 0.48);
   color: #0C1927;
 }
@@ -136,7 +130,7 @@ footer {
   font-size: 28px;
   display: inline-block;
 }
-.footabout-item:hover {
+.footabout-item > a:hover {
   color: #3181A6;
   border-bottom: 1px solid #3181A6;
 }
