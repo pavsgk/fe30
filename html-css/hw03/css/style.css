@@ -76,12 +76,14 @@ aside {
 }
 .about-item:hover {
   background-color: #DBDBDB;
-  padding-left: 66px;
+  padding-left: 43px;
   color: #35444F;
 }
 .about-item > a {
   display: block;
-  padding: 26px 44px;
+  padding-left: 44px;
+  padding-bottom: 26px;
+  padding-top: 26px;
 }
 
 article {
