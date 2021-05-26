@@ -40,8 +40,9 @@ ol {
   list-style: none;
 }
 
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+a, a:hover {
+  text-decoration:none;
+  color: inherit;
 }
 
 img {
