@@ -5,8 +5,8 @@
 }
 
 /* Убираем внутренние отступы */
-ul,
-ol {
+ul[class],
+ol[class] {
   padding: 0;
 }
 
@@ -17,8 +17,8 @@ h2,
 h3,
 h4,
 p,
-ul,
-ol,
+ul[class],
+ol[class],
 li,
 figure,
 figcaption,
