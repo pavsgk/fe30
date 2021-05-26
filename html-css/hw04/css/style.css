@@ -11,6 +11,7 @@ html, body {
 }
 .logo {
   display: flex;
+  margin-left: 27px;
 }
 .logo > h3 {
   font-size: 22px;
@@ -23,7 +24,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 27px;
   background-color: #313131;
   color: #FFF;
 }
@@ -41,6 +41,7 @@ header {
 .search {
   padding: 26px;
   background-color: #000;
+  margin-left: 85px;
 }
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('/img/header-bg.jpeg');
@@ -74,4 +75,41 @@ header {
 }
 .cyan {
   background-color: #14B9D5;
+}
+
+.blog {
+  padding-top: 50px;
+  padding-bottom: 70px;
+  background-color: #F2F2F2;
+}
+
+
+.blog-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 33px;
+  color: #18B4CF;
+  margin-bottom: 50px;
+}
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-height: 850px;
+  flex-wrap: wrap;
+}
+
+.blist-card {
+  max-width: 370px;
+
+}
+.blist-card > p {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  color: #353A3D;
+  background-color: #FFF;
+  padding: 20px 0;
 }
