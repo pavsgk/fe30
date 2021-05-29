@@ -113,3 +113,64 @@ header {
   background-color: #FFF;
   padding: 20px 0;
 }
+
+.grid-container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+.paralax2 {
+  background-image: url('/img/parallax-bg.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
+}
+.clients {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  max-width: 100%;
+  padding-top: 100px;
+  padding-bottom: 150px;
+  row-gap: 90px;
+  grid-template-columns: repeat(4, minmax(max-content, 230px));
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "t t t t"
+  "sep sep sep sep"
+  "cli1 cli2 cli3 cli4";
+}
+.clients > h2 {
+  grid-area: t;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.separator {
+  grid-area: sep;
+  width: 60px;
+  height: 3px;
+}
+
+.cli-img1 {
+  grid-area: cli1;
+}
+.cli-img2 {
+  grid-area: cli2;
+}
+.cli-img3 {
+  grid-area: cli3;
+}
+.cli-img4 {
+  grid-area: cli4;
+}
+.toprated {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.toprated-list {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
