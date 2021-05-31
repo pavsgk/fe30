@@ -264,14 +264,8 @@ footer > .container {
 }
 
 .footlogo {
-  text-align: end;
-}
-
-.footlogo-img {
-  display: inline-block;
-  float: right;
-}
-.footlogo-img::before {
-  display: inline-block;
-  content: url('../img/Vector Smart Object copy 3.svg');
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-top: 5px;
 }
