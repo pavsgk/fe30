@@ -1,8 +1,15 @@
 html, body {
   margin: 0 auto;
   padding: 0;
-  box-sizing: border-box;
   text-align: center;
+  font-family: 'Arimo', sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 4rem;
 }
 
 .wrapper {
@@ -11,7 +18,118 @@ html, body {
   width: 1200px;
 }
 
-.price1 {
+.ptb1 {
+  width: 1150px;
+  box-sizing: content-box;
   border: 22px solid #3A4965;
-  
+  background-color: #D8D8D8;
+  border-collapse: collapse;
+}
+
+.ptb1 > thead {
+  background-color: #FAFAFA;
+}
+
+.ptb1-col1 {
+  width: 315px;
+  border-right: 1px solid #C1C1C1;
+}
+.ptb1-col2 {
+  width: 280px;
+  border-right: 1px solid #C1C1C1;  
+}
+.ptb1-col3 {
+  width: 280px;
+  border-right: 1px solid #C1C1C1;
+}
+.ptb1-col4 {
+  width: 280px;
+}
+.ptb1 > thead {
+  height: 160px;
+}
+.ptb1 td:nth-child(2) {
+  height: 72px;
+}
+
+
+.ptb1 tr:not(.ptb1-head > tr, .ptb1-foot) {
+  height: 72px;
+}
+
+.ptb1 > tbody > tr:nth-child(1n) {
+  background-color: #F2F2F2;
+}
+
+.ptb1 > tbody > tr:nth-child(2n) {
+  background-color: #E3E3E3;
+}
+
+.green {
+  background:#89C331;
+  color: #FFF;
+}
+.red {
+  background:#F04A56;
+  color: #FFF;
+}
+.bottle {
+  background:#20807C;
+  color: #FFF;
+}
+.btn {
+  border-radius: 5px;
+  display: block;
+  width: 190px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 9px;
+}
+
+.ptb1-foot > td {
+  height: 110px;
+  padding: 28px 0;
+}
+
+.price-big {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.price-big > h2::after {
+  content: '.99';
+  position: absolute;
+  font-size: 0.4em;
+}
+.price-big > span {
+  font-size: 1.2rem;
+}
+
+.ptb1-head h3 {
+  font-size: 2rem;
+}
+
+.ptb1-head h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.ico-stor::before {
+  content: url('../1.svg');
+}
+.ico-band::before {
+  content: url('../2.svg');
+}
+.ico-eml::before {
+  content: url('../3.svg');
+}
+.ico-sup::before {
+  content: url('../4.svg');
+}
+.ico-pro::before {
+  content: url('../5.svg');
+}
+.ico-usr::before {
+  content: url('../6.svg');
 }

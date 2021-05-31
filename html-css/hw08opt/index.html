@@ -6,37 +6,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
   <title>Pricing table</title>
 </head>
 <body>
   <div class="wrapper">
-    <table class="price1">
-      <thead>
+    <table class="ptb1">
+      <colgroup>
+        <col class="ptb1-col1" span="1">
+        <col class="ptb1-col2" span="1">
+        <col class="ptb1-col3" span="1">
+        <col class="ptb1-col4" span="1">
+
+      </colgroup>
+      <thead class="ptb1-head">
         <tr>
           <td rowspan="2"><h4>choose your</h4><h3>pricing plan</h3></td>
-          <td>standard</td>
-          <td>ultimate</td>
-          <td>premium</td>
+          <td class="green">standard</td>
+          <td class="red">ultimate</td>
+          <td class="bottle">premium</td>
         </tr>
         <tr>
-          <td>17</td>
-          <td>37</td>
-          <td>97</td>
+          <td><div class="price-big"><h2>$17</h2><span>per month</span></div></td>
+          <td><div class="price-big"><h2>$37</h2><span>per month</span></div></td>
+          <td><div class="price-big"><h2>$97</h2><span>per month</span></div></td>
         </tr>
       </thead>
       <tfoot>
-
-      </tfoot>
-      <tbody>
-        <tr>
-          <td><i></i>Storage</td>
-          <td>500GB Storage</td>
-          <td>1000GB Storage</td>
-          <td>2000GB Storage</td>
+        <tr class="ptb1-foot">
+          <td><a href="#" class="btn">contact us</a></td>
+          <td><a href="#" class="btn green">buy now</a></td>
+          <td><a href="#" class="btn red">buy now</a></td>
+          <td><a href="#" class="btn bottle">buy now</a></td>
         </tr>
-          <td><i></i></td>
-          <td></td>
-          <td></td>
+      </tfoot>
+      <tbody class="ptb1-body">
+        <tr>
+          <td><i class="ico-stor"></i>storage</td>
+          <td>500GB storage</td>
+          <td>1000GB storage</td>
+          <td>2000GB storage</td>
+        </tr>
+        <tr>
+          <td><i class="ico-band"></i>bandwidth</td>
+          <td colspan="2">limited</td>
+          <td>unlimited</td>
+        </tr>
+        <tr>
+          <td><i class="ico-eml"></i>email</td>
+          <td>25 emails</td>
+          <td>45 emails</td>
+          <td>65 emails</td>
+        </tr>
+        <tr>
+          <td><i class="ico-sup"></i>support</td>
+          <td colspan="3">24/7 support</td>
+        </tr>
+        <tr>
+          <td><i class="ico-pro"></i>products</td>
+          <td>20 products</td>
+          <td>30 products</td>
+          <td>60 products</td>
+        </tr>
+        <tr>
+          <td><i class="ico-usr"></i>users</td>
+          <td>1 user</td>
+          <td>10 users</td>
+          <td>15 users</td>
+        </tr>
       </tbody>
     </table>
   </div>
