@@ -269,9 +269,8 @@ footer > .container {
 
 .footlogo-img {
   display: inline-block;
-  float: right;
 }
 .footlogo-img::before {
-  display: inline-block;
   content: url('../img/Vector Smart Object copy 3.svg');
+  float: left;
 }
