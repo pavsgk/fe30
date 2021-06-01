@@ -179,6 +179,10 @@ header {
 .toprated-list {
   display: grid;
   grid-auto-flow: column;
+  width: 100%;
+}
+.toprated-list > img {
+  width: 100%;
 }
 
 .grid-container {
