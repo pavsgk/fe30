@@ -1,14 +1,6 @@
 body {
-  display: flex;
   background-image: url('/img/background\ 1.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
-.wrapper {
-  align-self: center;
-  margin: 0 auto;
-  border: 1px red solid;
-  width: 1030px;
-  height: 560px;
 }
