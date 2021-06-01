@@ -259,6 +259,7 @@ footer > .container {
   display: grid;
   grid-auto-flow: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .copyright {
@@ -270,10 +271,9 @@ footer > .container {
 }
 
 .footlogo {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding-top: 5px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
 }
 
 .paralax {
