@@ -37,26 +37,33 @@ h2 {
 
 .ptb1-col1 {
   width: 315px;
-  border-right: 1px solid #C1C1C1;
+  /* border-right: 1px solid #C1C1C1; */
 }
 .ptb1-col2 {
   width: 280px;
-  border-right: 1px solid #C1C1C1;  
+  /* border-right: 1px solid #C1C1C1;   */
 }
 .ptb1-col3 {
   width: 280px;
-  border-right: 1px solid #C1C1C1;
+  /* border-right: 1px solid #C1C1C1; */
 }
 .ptb1-col4 {
   width: 280px;
 }
+.ptb1-head tr:nth-child(2) > td {
+  border-left: 1px solid #C1C1C1
+}
+.ptb1-body td:nth-child(n+1), 
+.ptb1-foot td:nth-child(n+1) {
+  border-left: 1px solid #C1C1C1
+}
+
 .ptb1 > thead {
   height: 160px;
 }
 .ptb1 td:nth-child(2) {
   height: 72px;
 }
-
 
 .ptb1 tr:not(.ptb1-head > tr, .ptb1-foot) {
   height: 72px;
@@ -70,23 +77,6 @@ h2 {
   background-color: #E3E3E3;
 }
 
-.grey {
-  background-color: #484848;
-  color: #FFF;
-}
-
-.green {
-  background-color:#89C331;
-  color: #FFF;
-}
-.red {
-  background-color:#F04A56;
-  color: #FFF;
-}
-.bottle {
-  background-color:#20807C;
-  color: #FFF;
-}
 .btn {
   border-radius: 5px;
   display: block;
@@ -120,30 +110,11 @@ h2 {
 .ptb1-head h3 {
   font-size: 2rem;
 }
-
 .ptb1-head h4 {
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-.ico-stor::before {
-  content: url('../1.svg');
-}
-.ico-band::before {
-  content: url('../2.svg');
-}
-.ico-eml::before {
-  content: url('../3.svg');
-}
-.ico-sup::before {
-  content: url('../4.svg');
-}
-.ico-pro::before {
-  content: url('../5.svg');
-}
-.ico-usr::before {
-  content: url('../6.svg');
-}
 .ptb1-body i {
   margin-right: 0.3rem;
 }
@@ -166,7 +137,6 @@ h2 {
 .ptb2 tr > td:nth-child(2n) {
   background-color: #E3E3E3;
 }
-
 .ptb2 tr > td:nth-child(2n+3) {
   background-color: #F2F2F2;
 }
@@ -209,4 +179,39 @@ h2 {
   margin: 0 auto;
   padding-top: 11px;
   box-shadow: inset 0 -4px rgba(0, 0, 0, 50%);
+}
+
+.ico-stor::before {
+  content: url('../1.svg');
+}
+.ico-band::before {
+  content: url('../2.svg');
+}
+.ico-eml::before {
+  content: url('../3.svg');
+}
+.ico-sup::before {
+  content: url('../4.svg');
+}
+.ico-pro::before {
+  content: url('../5.svg');
+}
+.ico-usr::before {
+  content: url('../6.svg');
+}
+.grey {
+  background-color: #484848;
+  color: #FFF;
+}
+.green {
+  background-color:#89C331;
+  color: #FFF;
+}
+.red {
+  background-color:#F04A56;
+  color: #FFF;
+}
+.bottle {
+  background-color:#20807C;
+  color: #FFF;
 }
