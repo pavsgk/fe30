@@ -53,6 +53,7 @@ header {
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/header-bg.jpeg');
   background-position: center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 165px;
@@ -127,9 +128,10 @@ header {
   padding: 20px 0;
 }
 
-.paralax2 {
+.clients-bg {
   background-image: url('../img/parallax-bg.jpeg');
   background-position: center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 100%;
@@ -268,4 +270,8 @@ footer > .container {
   justify-content: flex-end;
   align-items: flex-start;
   padding-top: 5px;
+}
+
+.paralax {
+  background-attachment: fixed;
 }
