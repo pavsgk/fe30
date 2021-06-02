@@ -3,20 +3,31 @@ html, body {
   font-size: 10px;
   box-sizing: border-box;
 }
-
-.bg {
+body {
   background-image: url('../img/bg1.jpg');
   background-position: center;
   background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.bg {
+  /* 
+  breaks picture on small screens
+  background-image: url('../img/bg1.jpg');
+  background-position: center;
+  background-size: cover;
+  */
   min-width: 100vw;
   min-height: 100vh;
 }
 
 .container {
-  width: 100%;
+  width: 1030px;
   height: 100vh;
   margin: 0 auto;
-  width: 1030px;
   padding-top: 50px;
 }
 header {
@@ -153,4 +164,15 @@ header {
   font-size: 1.4rem;
   text-align: center;
   color: #FFF;
+}
+
+.grad-border {
+  padding: 3px;
+  background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+}
+.grad-border > .card-sticker {
+  width: 98%;
+}
+.card:hover .grad-border .card-sticker {
+  bottom: 3px;
 }
