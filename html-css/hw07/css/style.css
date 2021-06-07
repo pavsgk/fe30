@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'SWFont';
+  src: url('../fonts/SFDistantGalaxy.ttf');
+}
+
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  font-family: 'SWFont', sans-serif;
+  background: #000;
+  line-height: 1.5;
+}
+.wrapper {
+  text-align: center;
+  color: #FFE81F;
+  max-width: 400px;
+  transform-style: preserve-3d;
+}
+.wrapper > h2 {
+  margin-bottom: 1rem;
+}
