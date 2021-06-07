@@ -1,11 +1,6 @@
-:root {
-  --col-hov: #236D47 
-}
-
 body {
   color: #FFF;
   font-family: 'Ubuntu', sans-serif;
-  box-sizing: border-box;
 }
 
 a {
@@ -21,27 +16,28 @@ a {
 }
 
 header {
-  background: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 16px 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo:hover {
-  color: var(--col-hov);
-}
-
-.link-image:hover path {
-  fill: var(--col-hov);
-}
-
-
 .logo {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 22px;
   line-height: 22px;
+}
+.logo:hover {
+  color: #236D47
+}
+
+.link-image path {
+  transition: fill 0.3s ease;
+}
+.link-image:hover path {
+  fill: #236D47
 }
 
 .navmenu {
@@ -50,28 +46,18 @@ header {
   align-items: center;
   column-gap: 25px;
 }
-
-.navmenu::after {
-  width: 1px;
-  height: 18px;
-  content: '';
-  display: block;
-  background: rgba(255, 255, 255, 0.9);
-  opacity: 0.5;
-}
-
-.navmenu-item {
-  order: 1;
-}
-
 .navmenu::after {
   width: 1px;
   height: 19px;
   content: '';
   display: block;
-  background: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   opacity: 0.5;
   order: 2;
+}
+
+.navmenu-item {
+  order: 1;
 }
 
 .navmenu-login {
@@ -81,59 +67,78 @@ header {
 }
 
 .navmenu-link:hover {
-  color: var(--col-hov);
+  color: #236D47
 }
 
 .modal {
   position: relative;
-  width: 445px;
+  max-width: 445px;
   margin: 0 auto;
   background-color: #fff;
   color: #434343;
   padding: 30px 60px 38px;
   display: grid;
   grid-auto-flow: row;
+  top: calc((100% - 59px) / 2);
+  transform: translateY(-50%);
 }
 .modal::before {
   content: '';
   position: absolute;
   left: 0;
   top: 29px;
-  background: #3CB878;
+  background-color: #3CB878;
   width: 18px;
   height: 18px;
-
 }
+.modal > input:focus {
+  outline: none;
+}
+
 
 .btn {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 14px 16px;
+  padding: 10px 16px;
   border-radius: 4px;
   text-decoration: none;
   color: #FFFFFF;
   font-size: 16px;
+  line-height: 24px;
+  border: none;
 }
+.btn.fb::before, .btn.google::before {
+  content: '';
+  order: 1;
+  height: 28px;
+  width: 1px;
+  background-color: #2B0D09;
+  opacity: 0.1;
+}
+.modal-social-name {
+  order: 2;
+}
+
 .google {
-  background: #DF4A32;
+  background-color: #DF4A32;
 }
 .google:hover {
-  background: #AB1F09;
+  background-color: #AB1F09;
 }
 
 .fb {
-  background: #305DB8;
+  background-color: #305DB8;
 }
 .fb:hover {
-  background: #022263;
+  background-color: #022263;
 }
 
 .green {
-  background: rgba(60, 184, 120, 0.8);
+  background-color: rgba(60, 184, 120, 0.8);
 }
 .green:hover {
-  background: #01813F;
+  background-color: #01813F;
 }
 
 .modal-sign {
@@ -148,24 +153,22 @@ header {
   line-height: 20px;
 }
 
-
 .modal-login {
   color: #3CB878;
   justify-self: end;
 }
-
 .modal-login:hover {
   text-decoration: underline;
   color: #01813F;
 }
+
 .hor-separator {
   display: flex;
   align-items: center;
   column-gap: 2px;
-  margin-top: 32px;
+  margin-top: 27px;
   margin-bottom: 10px;
 }
-
 .hor-separator::before {
   content: '';
   width: 100%;
@@ -178,6 +181,7 @@ header {
   height: 1px;
   background-color: #F2F2F2;
 }
+
 .modal-input {
   margin-bottom: 15px;
   border: 1px solid #F2F2F2;
@@ -185,13 +189,14 @@ header {
   color: #434343;
   font-size: 14px;
   line-height: 14px;
-  padding: 20px 16px;
+  padding: 13px 20px;
 }
 .modal-input:focus {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.21);
   border-radius: 4px;
 }
+
 .modal-checkbox {
   display: none;
 }
@@ -205,8 +210,7 @@ header {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: rgba(0, 0, 0, 0.0001);
-  border: 1px solid black;
+  border: 1px solid #F2F2F2;
 }
 .modal-checkbox:checked ~ .modal-chekbox-status {
   background-image: url('../img/check.svg');
@@ -220,4 +224,8 @@ header {
 .modal-link:hover {
   text-decoration: underline;
   color: #01813F;
+}
+
+.slowmo {
+  transition: all 0.3s ease
 }
