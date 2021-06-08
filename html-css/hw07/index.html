@@ -5,16 +5,53 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
   <title>Document</title>
 </head>
 <body>
   <div class="wrapper">
-    <h2>EPISODE 0</h2>
-    <h2>ATTACK OF THE FRONTEND</h2>
-    <p>
-      When there is no more hope. When Winter is coming. When the White Walkers prepare to break down the Wall and JAVA can no longer stop them ...
-      Comes he - Javascript. Lord of untyped data and components, he does not give up technical tasks "to do nicely" and is not afraid of calculations on the user side. But he comes not alone, having 3 of his faithful friends with him: jQuery, React.js and Node.js.
-    </p>
+    <div class="card">
+      <h2>EPISODE 0</h2>
+      <h2>ATTACK OF THE FRONTEND</h2>
+      <p>
+        When there is no more hope. When Winter is coming. When the White Walkers prepare to break down the Wall and JAVA can no longer stop them ...
+        Comes he - Javascript. Lord of untyped data and components, he does not give up technical tasks "to do nicely" and is not afraid of calculations on the user side. But he comes not alone, having 3 of his faithful friends with him: jQuery, React.js and Node.js.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel omnis similique optio vero at minus fuga tempora ad nobis ducimus laborum odit ipsum, dolorem, hic veritatis recusandae suscipit quam! Sunt?
+      </p>
+    </div>
   </div>
+  <button class="btn-sound" onclick="playSnd()"></button>
+  <audio id="bgmusic" src="./audio/main.mp3" loop></audio>
+  <script>
+    let playback = false;
+    class Star {
+      constructor(parent = document.body) {
+        this.body = document.createElement('div');
+        this.body.style.position = 'absolute';
+        this.body.style.left = Math.random() * window.innerWidth + 'px';
+        this.body.style.top = Math.random() * window.innerHeight + 'px';
+        this.body.style.borderRadius = '50%'
+        const size = Math.random() * 7;
+        this.body.style.height = `${size}px`;
+        this.body.style.width = `${size}px`;
+        this.body.style.backgroundColor = 'white';
+        this.body.style.opacity = Math.random();
+        parent.appendChild(this.body);
+      }
+    }
+    for (let i = 0; i < 25; i++) {
+      const nStar = new Star();
+    }
+    function playSnd() {
+      const bgm = document.getElementById('bgmusic');
+      if (!playback) {
+        bgm.play();
+        playback = !playback;
+        return;
+      }
+      playback = !playback;
+      bgm.pause();
+    }
+  </script>
 </body>
 </html>

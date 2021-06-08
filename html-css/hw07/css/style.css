@@ -3,6 +3,19 @@
   src: url('../fonts/SFDistantGalaxy.ttf');
 }
 
+.btn-sound {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: #FFE81F;
+  background-image: url('../img/volume.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75%;
+}
+
 * {
   margin: 0 auto;
   padding: 0;
@@ -12,13 +25,31 @@ body {
   font-family: 'SWFont', sans-serif;
   background: #000;
   line-height: 1.5;
+  overflow: hidden;
 }
 .wrapper {
   text-align: center;
+  height: 100vh;
   color: #FFE81F;
-  max-width: 400px;
   transform-style: preserve-3d;
+  perspective: 100px;
+  overflow: hidden;
 }
-.wrapper > h2 {
+.card {
+
+  max-width: 400px;
+  animation: swhover 30s linear 0s infinite running;
+}
+
+.card > h2 {
   margin-bottom: 1rem;
+}
+
+@keyframes swhover  {
+  0% {
+    transform: rotateX(15deg) translateY(100%) ;
+  }
+  100% {
+    transform: rotateX(15deg) translateY(0);
+  }
 }
