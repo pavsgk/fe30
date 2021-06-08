@@ -1,0 +1,61 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  height: 300vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  height: 600px;
+}
+
+.upbg1 {
+  position: absolute;
+  top: 0;
+  background-image: url('../img/bg1.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.upbanner {
+  background-color: #FFF;
+  width: 100%;
+  padding: 40px 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 28px;
+}
+.upbanner-title {
+  font-family: 'Roboto', sans-serif;
+  color: #424F57;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 36px;
+}
+.upbanner-title > span {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #14AFCA;
+}
+.upbanner-nav {
+  display: flex;
+  column-gap: 55px;
+}
+.upbanner-link {
+  text-transform: uppercase;
+  color: #3E4C4E;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.75px;
+}
+.upbanner-link:hover {
+  color: #14AFCA;
+}
