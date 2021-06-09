@@ -36,10 +36,11 @@
         this.body.style.width = `${size}px`;
         this.body.style.backgroundColor = 'white';
         this.body.style.opacity = Math.random();
+        this.body.style.zIndex = -1;
         parent.appendChild(this.body);
       }
     }
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 300; i++) {
       const nStar = new Star();
     }
     function playSnd() {
