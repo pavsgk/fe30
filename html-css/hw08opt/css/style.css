@@ -87,24 +87,38 @@ h2 {
   box-shadow: inset 0 -4px rgba(0, 0, 0, 50%);
 }
 
+.btn, .btn2 {
+  transition: filter 0.3s linear;
+}
+
 .ptb1-foot > td {
   height: 110px;
   padding: 28px 0;
 }
 
 .price-big {
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: center;
   position: relative;
+  grid-template: 1fr 2fr / 1fr 1fr;
+  justify-items: end;
 }
-.price-big > h2::after {
-  content: '.99';
-  position: absolute;
-  font-size: 0.4em;
+.price-big > h2 {
+  grid-row: span 2;
 }
+.price-big > p {
+  font-size: 24px;
+  font-weight: bold;
+  align-self: start;
+  justify-self: baseline;
+  line-height: 24px;
+  align-self: end;
+}
+
 .price-big > span {
   font-size: 1.2rem;
+  justify-self: start;
+  align-self: baseline;
 }
 
 .ptb1-head h3 {
@@ -181,7 +195,7 @@ h2 {
   box-shadow: inset 0 -4px rgba(0, 0, 0, 50%);
 }
 
-.ico-stor::before {
+/* .ico-stor::before {
   content: url('../1.svg');
 }
 .ico-band::before {
@@ -198,7 +212,8 @@ h2 {
 }
 .ico-usr::before {
   content: url('../6.svg');
-}
+} */
+
 .grey {
   background-color: #484848;
   color: #FFF;
@@ -214,4 +229,7 @@ h2 {
 .bottle {
   background-color:#20807C;
   color: #FFF;
+}
+.btn:hover, .btn2:hover {
+  filter: brightness(1.3) 
 }
