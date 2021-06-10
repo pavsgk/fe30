@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'FuturaBT', sans-serif;
   font-size: 15px;
   height: 300vh;
 }
@@ -13,6 +13,11 @@ header {
   overflow: hidden;
   position: relative;
   padding-top: 28px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .triangle-cut {
@@ -65,7 +70,57 @@ header::before {
   font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.75px;
+  font-family: 'Open Sans', sans-serif;
+
 }
 .upbanner-link:hover {
   color: #14AFCA;
+}
+
+.we-create {
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 150px;
+  font-size: 52px;
+  color: #FFF;
+  white-space: pre-line;
+  line-height: 75px;
+}
+
+.what {
+  text-align: center;
+  padding-top: 150px;
+}
+
+.main-tittle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 60px;
+  color: #14AFCA;
+}
+
+.main-subtittle {
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Open Sans';
+  color: #424F57;
+}
+
+.main-text {
+  margin-top: 35px;
+  font-size: 16px;
+  line-height: 30px;
+  font-family: 'Roboto';
+  color: #424F57;
+}
+
+
+
+
+
+
+
+.why {
+  padding-top: 105px;
 }
