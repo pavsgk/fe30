@@ -1,16 +1,16 @@
 :root {
   --col-bg: #FFFFFF
 }
-
-* {
+/* * {
    outline: 1px dotted red;
-}
+} */
 
 body {
   font-family: 'FuturaBT', sans-serif;
   font-size: 15px;
   height: 300vh;
   text-align: center;
+  overflow-x: hidden;
 }
 
 a {
@@ -42,7 +42,6 @@ header {
   border-right: 50vw solid var(--col-bg);
   border-top: 85px solid transparent;
 }
-
 .transp-antitriangle {
   position: absolute;
   width: 100%;
@@ -51,11 +50,9 @@ header {
   border-right: 50vw solid transparent;
   border-top: 85px solid var(--col-bg);
 }
-
 .posbottom {
   bottom: 0;
 }
-
 .postop {
   top: 0;
 }
@@ -74,7 +71,6 @@ header::before {
   background-repeat: no-repeat;
   z-index: -1;
 }
-
 
 .upbanner {
   background-color: #FFF;
@@ -135,6 +131,7 @@ header::before {
 .main-title {
   font-family: 'Roboto', sans-serif;
   font-size: 60px;
+  letter-spacing: 1.5px;
   color: #14AFCA;
   text-transform: uppercase;
 }
@@ -185,6 +182,7 @@ header::before {
   grid-template: repeat(2, 1fr) / repeat(4, 1fr);
   align-items: center;
   justify-items: center;
+  padding-top: 45px;
 }
 .companies-list > img {
   max-height: 100px;
@@ -200,6 +198,7 @@ header::before {
   grid-auto-flow: column;
   align-items: center;
   justify-items: center;
+  padding-top: 35px;
 }
 
 .meet-card {
@@ -218,7 +217,10 @@ header::before {
 }
 
 .test {
-  position: relative
+  position: relative;
+  padding-top: 190px;
+  padding-bottom: 145px;
+
 }
 .test::before {
   background:  linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/bg3.jpg');
@@ -235,12 +237,17 @@ header::before {
   z-index: -1;
 }
 
+.test .main-subtitle {
+  color: #FFFFFF;
+}
+
 .test-text {
   margin-top: 50px;
   letter-spacing: 0.8px;
   color: #D3CCCC;
   font-size: 16px;
-  font-family: Open Sans;
+  line-height: 28px;
+  font-family: 'Open Sans';
   font-style: italic;
 }
 
@@ -252,16 +259,11 @@ header::before {
   font-size: 18px;
   color: var(--col-bg);
   padding-right: 130px;
+  text-align: end;
 }
-
-
-
-
-
 
 .why {
   padding-top: 105px;
-  background-color: grey;
 }
 .why-slogan {
   margin-top: 50px;
@@ -271,4 +273,24 @@ header::before {
   line-height: 48px;
   letter-spacing: 0.75px;
   color: #424F57;
+}
+
+footer {
+  padding-top: 100px;
+  padding-bottom: 90px;
+}
+
+.copyright {
+  white-space: pre-line;
+  font-family: Open Sans;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.7px;
+  color: #3D3C3C;
+}
+.copyright > span {
+  font-family: Open Sans;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
 }
