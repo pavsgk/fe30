@@ -11,6 +11,8 @@ body {
   height: 300vh;
   text-align: center;
   overflow-x: hidden;
+  perspective: 100px;
+  transform-style: preserve-3d;
 }
 
 a {
@@ -22,6 +24,7 @@ header {
   position: relative;
   padding-top: 28px;
   padding-bottom: 155px;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8))
 }
 
 .container {
@@ -58,7 +61,7 @@ header {
 }
 
 header::before {
-  background:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/bg1.jpg');
+  background:  url('../img/bg1.jpg');
   display: block;
   position: absolute;
   content: '';
@@ -70,6 +73,7 @@ header::before {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
+  transform: scale(1.2) translateY(-50px) translateZ(-1px);
 }
 
 .upbanner {
@@ -126,6 +130,7 @@ header::before {
   padding-top: 150px;
   position: relative;
   padding-bottom: 175px;
+  background-color: #FFF;
 }
 
 .main-title {
@@ -157,6 +162,7 @@ header::before {
   padding-top: 130px;
   padding-bottom: 82px;
   position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8))
 }
 .companies::before {
   display: block;
@@ -166,11 +172,12 @@ header::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/bg2.jpg');
+  background: url('../img/bg2.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
+  transform: scale(1.2) translateY(-50px) translateZ(-1px);
 }
 
 .companies > .main-subtitle {
@@ -183,6 +190,8 @@ header::before {
   align-items: center;
   justify-items: center;
   padding-top: 45px;
+  row-gap: 80px;
+  column-gap: 30px;
 }
 .companies-list > img {
   max-height: 100px;
@@ -191,6 +200,7 @@ header::before {
 .meet {
   padding-top: 200px;
   padding-bottom: 128px;
+  background-color: #FFF;
 }
 
 .meet-list {
@@ -220,10 +230,10 @@ header::before {
   position: relative;
   padding-top: 190px;
   padding-bottom: 145px;
-
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 .test::before {
-  background:  linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/bg3.jpg');
+  background: url('../img/bg3.jpg');
   display: block;
   position: absolute;
   content: '';
@@ -235,6 +245,7 @@ header::before {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
+  transform: scale(1.05) translateZ(-1px);
 }
 
 .test .main-subtitle {
@@ -264,6 +275,7 @@ header::before {
 
 .why {
   padding-top: 105px;
+  background-color: #FFF;
 }
 .why-slogan {
   margin-top: 50px;
