@@ -43,3 +43,9 @@ function findPrimes () {
     if (result[index] === true) return index;
   }).filter( x => x ));
 }
+
+alert('findMultiples function:')
+findMultiples()
+
+alert('Optional. findPrimes function:')
+findPrimes()
