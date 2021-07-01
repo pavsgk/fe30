@@ -1,13 +1,13 @@
-function askNum() {
+function askNum(msg) {
   let num;
   while (!Number.isInteger(+num) || isNaN(+num) || num === null || num === '') {
-    num = prompt('Enter number');
+    num = prompt(msg);
   }
   return +num;
 }
 
-function findMultiples () {
-  const num = askNum();
+function findMultiples (msg = 'Enter number') {
+  const num = askNum(msg);
   const result = [];
   for (let i = 0; i <= num; i++) {
     if (i % 5 === 0)
@@ -21,9 +21,10 @@ function findMultiples () {
   return result;
 }
 
-function findPrimes () {
-  const m = askNum();
-  const n = askNum();
+function findPrimes (msg = 'Enter number') {
+  const inp = [askNum(msg), askNum(msg)];
+  const m = Math.min(...inp);
+  const n = Math.max(...inp);
   const result = Array(n).fill(false);
   for (let i = m; i <= n; i++) {
     if ((i % 2 === 0 && i !== 2) || i < 2) continue;
@@ -44,8 +45,6 @@ function findPrimes () {
   }).filter( x => x ));
 }
 
-alert('findMultiples function:')
-findMultiples()
+findMultiples('findMultiples function: enter number');
 
-alert('Optional. findPrimes function:')
-findPrimes()
+findPrimes('findPrimes function (optional): enter number');
