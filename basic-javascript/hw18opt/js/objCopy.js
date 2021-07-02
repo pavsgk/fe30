@@ -1,10 +1,10 @@
 //hw18
 function objCopy (src, target = null) {
-  if (typeof(src) != 'object') return src;
-  if (target == null) target = {};
+  if (typeof(src) !== 'object') return src;
+  if (target === null) target = {};
   for (key in src) {
-    if (typeof(src[key]) == "object") {
-      if (Array.isArray(src[key]) == true) {
+    if (typeof(src[key]) === "object" && src[key]!== null) {
+      if (Array.isArray(src[key]) === true) {
         target[key] = [];
       } else {
         target[key] = {};
@@ -28,6 +28,7 @@ const original = {
     arr: [{text: 'hello'}, {}],
   },
   d: [1, 2, 3],
+  e: null,
   func() {
     console.log('hello ' + this.a)
   }
