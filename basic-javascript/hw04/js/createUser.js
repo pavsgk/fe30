@@ -1,25 +1,40 @@
-function createNewUser () {
-  let firstName = '';
-  let lastName = '';
-  this.setFirstName = function () {    
-    firstName = prompt('Enter your first name');
+const createNewUser = (firstName, lastName) => {
+  if (firstName === undefined 
+      || lastName === undefined 
+      || String(firstName).trim() === '' 
+      || String(lastName).trim() === '') {
+    firstName = prompt('Name?');
+    lastName = prompt('Lastname?');
+    if (firstName === null || lastName === null) return null;
+    return createNewUser(firstName, lastName);
   }
-  this.setLastName = function () {    
-    lastName = prompt('Enter your last name');
-  }
-  this.getLogin = function () {
-    return `${firstName[0]}${lastName}`.toLowerCase();
-  }
-  this.getFirstName = function () {
-    return firstName;
-  }
-  this.getLastName = function () {
-    return lastName;
-  }
-
-  this.setFirstName();
-  this.setLastName();
+  return { 
+    firstName, 
+    lastName,
+    getLogin() {
+      return `${this.firstName[0]}${this.lastName}`.toLocaleLowerCase();
+    },
+    set setFirstName(n) {
+      Object.defineProperty(this, 'firstName', {
+        value: n
+      });
+    },
+    set setLastName(n) {
+      Object.defineProperty(this, 'lastName', {
+        value: n
+      });
+    },  
+  };
 }
 
-let newUser = new createNewUser();
+const newUser = createNewUser();
+Object.defineProperties(newUser, {
+  'firstName': {
+    writable: false
+  },
+  'lastName': {
+    writable: false
+  },
+});
+
 console.log(newUser.getLogin());
