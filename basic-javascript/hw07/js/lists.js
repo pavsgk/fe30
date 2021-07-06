@@ -1,3 +1,7 @@
+function refreshTimeout() {
+  timerElm.innerText = `${String(timeout)}s`;
+}
+
 function dropList (arr, parent = document.body) {
   if (parent.tagName !== 'UL') {
     const oldParent = parent;
@@ -18,3 +22,19 @@ function dropList (arr, parent = document.body) {
 }
 
 dropList(["Kharkiv", "Kiev", ["Borispol", ["Artemivka", "Ivankiv", "Gorodivka"]], "Odessa", "Lviv", ['Rudne', 'Zymna voda'], "Dnieper"]);
+
+// autoclear:
+let timeout = 3;
+const timerElm = document.createElement('h2');
+document.body.appendChild(timerElm);
+refreshTimeout();
+
+const delTimer = setInterval( () => {
+  timeout -= 1;
+  if (timeout <= 0) {
+    document.body.innerHTML = '';
+    clearInterval(delTimer);
+  } else {
+    refreshTimeout();
+  }
+}, 1000)
