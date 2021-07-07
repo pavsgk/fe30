@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+button {
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+div {
+  border-radius: 5px;
+  padding: 1px 5px;
+  border: 1px solid gray;
+}
+
+input {
+  margin-top: 5px;
+}
+
+.invis {
+  display: none;
+}
+
+.price-green {
+  outline: darkgreen 2px solid;
+}
+
+.price-err {
+  outline: red 2px solid;
+}
