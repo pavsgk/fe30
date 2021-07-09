@@ -10,7 +10,7 @@ class TabSelector {
   set selectedId(id) { // render if ok or rebuild on the fly if element count changed
     this._selectedId = id;
     if (this._selectCount !== this._selector.children.length || this._tabsCount !== this._content.children.length) {
-      this.rebuild(); 
+      this.rebuild();
     } else {
       this.render();
     }
@@ -20,9 +20,16 @@ class TabSelector {
     if (!this._ids.includes(rnd)) {
       return rnd;
     } else {
-      console.log('not uniq '+ rnd);
       return this.getUid();
     }
+  }
+  ifSelected() {
+    for (const elm of Object.keys(this._selectors)) {
+      if (this._selectors[elm].classList.contains(activeClass)) {
+        return elm;
+      }
+    }
+    return false;
   }
   rebuild(sel = this._selectorName, cont = this._contentName) {
     [sel, cont] = [document.querySelector(sel), document.querySelector(cont)];
@@ -44,7 +51,7 @@ class TabSelector {
         this.selectedId = e.target.dataset.tid;
       }
     });
-    this.selectedId = Object.values(this._selectors)[0].dataset.tid;
+    this.selectedId = this.ifSelected() || Object.values(this._selectors)[0].dataset.tid;
   }
   render() {
     for (const elm of Object.keys(this._selectors)) {
