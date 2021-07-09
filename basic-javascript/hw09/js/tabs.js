@@ -25,7 +25,7 @@ class TabSelector {
   }
   ifSelected() {
     for (const elm of Object.keys(this._selectors)) {
-      if (this._selectors[elm].classList.contains(activeClass)) {
+      if (this._selectors[elm].classList.contains(this.activeClass)) {
         return elm;
       }
     }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Homework-buttons</title>
+    <style>
+      .password-form {
+        display: flex;
+        flex-direction: column;
+      }
+      .input-wrapper {
+        position: relative;
+				width: 200px;
+			 
+      }
+
+      .input-wrapper input {
+        min-width: 120px;
+        padding: 10px;
+        margin-bottom: 24px;
+      }
+
+      .input-wrapper i {
+        position: absolute;
+        right: 25px;
+        top: 30px;
+        color: grey;
+      }
+
+			.btn{
+				width: 150px;
+			}
+
+      #errMsg {
+        color: red;
+        font: bold;
+      }
+
+    </style>
+  </head>
+  <body>
+    <form class="password-form" action="#" onsubmit="checkPassword(event)" type="POST">
+			<label class="input-wrapper">
+				Ввести пароль
+				<input id="field1" type="password"/>
+        <i id="field1ico" class="fas fa-eye icon-password"></i>
+			</label>
+      <label class="input-wrapper">
+				Подтвердить пароль
+        <input id="field2" type="password"/>
+        <i id="field2ico" class="fas fa-eye icon-password"></i>
+			</label>
+      <span id="errMsg"></span>
+			<button type="submit" class="btn">Подтвердить</button>
+    </form>
+    <script src="./js/valid.js"></script>
+  </body>
+</html>
