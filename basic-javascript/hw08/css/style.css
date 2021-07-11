@@ -38,6 +38,10 @@ input {
   outline: darkgreen 2px solid;
 }
 
+.green {
+  color: darkgreen;
+}
+
 .price-err {
   outline: red 2px solid;
 }

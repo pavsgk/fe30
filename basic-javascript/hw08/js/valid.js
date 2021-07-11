@@ -2,7 +2,8 @@ class Validator {
   constructor (parent = document.body) {
     this.parent = parent === document.body ? document.body : document.getElementById(parent);
     if (!this.parent) return null;
-
+    this.label = document.createElement('span');
+    this.label.innerText = 'Price: ';
     this.field = document.createElement('input');
     this.divStatus = document.createElement('div');
     this.span = document.createElement('span');
@@ -49,9 +50,17 @@ class Validator {
   }
   validate(val) {
     val = Number(val);
-    if (val >= 0) {
+    if (val > 0) {
       this.spanValue = `Текущая цена: ${val}`;
+      this.field.classList.add('green');
+    } else if (val === 0) {
+      this.spanValue = '';
+      this.errValue = '';
+      this.field.classList.remove('price-green');
+      this.field.classList.remove('price-err');
+      this.field.classList.remove('green');
     } else {
+      this.field.classList.remove('green');
       this.errValue = 'Please enter correct price';
     }
   }
@@ -59,7 +68,8 @@ class Validator {
     this.parent.appendChild(this.divStatus);
     this.divStatus.appendChild(this.span);
     this.divStatus.appendChild(this.clearBtn);
-    this.parent.appendChild(this.field);
+    this.label.appendChild(this.field);
+    this.parent.appendChild(this.label);
     this.parent.appendChild(this.errStatus);
     this.spanValue = '';
     this.errValue = '';
