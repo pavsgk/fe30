@@ -1,9 +1,6 @@
 :root {
   --col-bg: #FFFFFF
 }
-/* * {
-   outline: 1px dotted red;
-} */
 
 body {
   font-family: 'FuturaBT', sans-serif;
@@ -31,11 +28,6 @@ header {
   margin: 0 auto;
   max-width: 1000px;
 }
-
-/* .triangle-cut {
-  background: linear-gradient(175deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 85.9%, rgba(255,255,255,1) 86%, rgba(255,255,255,1) 100%),
-  linear-gradient(185deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 85.9%, rgba(255,255,255,1) 86%, rgba(255,255,255,1) 100%);
-} */
 
 .transp-triangle {
   position: absolute;
