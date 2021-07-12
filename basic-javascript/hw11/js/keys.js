@@ -1,39 +1,21 @@
-const clearAll = (target, removeClassName) => {
-  const buttons = document.querySelectorAll(target);
-  Array.from(buttons).forEach( x => x.classList.remove(removeClassName));
-}
-
-const keyInterceptor = (e) => {
-  clearAll('.btn', 'blue');
-  e.stopPropagation()
-  const key = e.key || e.target.innerHTML.toLowerCase();
-  if (findButton(e.target, key)) {
-    findButton(e.target, key).classList.add('blue');
+class KeyLogger {
+  constructor (elms, activeClass) {
+    this.elms = Array.from(document.querySelectorAll(elms));
+    this.activeClass = activeClass;
+    this._key = '';
+    this.elms.forEach(e => e.onkeydown = k => k.keyCode === 13 ? k.preventDefault() : false);
+  }
+  set key(x) {
+    if(x.length > 5 || x.length === 0) return;
+    this._key = x.toLowerCase();
+    this.elms.forEach( e => {
+      if (e.innerText.toLowerCase() === this._key) {
+        e.classList.add(this.activeClass);
+      } else {
+        e.classList.remove(this.activeClass);
+      }
+    });
   }
 }
 
-const findButton = (tar, key) => {
-  let result;
-  Array.from(tar.children).forEach( x => {
-    x.classList.remove('blue');
-    if (Array.from(x.children).length > 0) {
-      result = findButton(x, key);
-    } else {
-      if (x.innerHTML.toLowerCase() === key.toLowerCase()) result = x;
-    }
-  });
-  if (Array.from(tar.children).length === 0) {
-    if (tar.innerHTML.toLowerCase() === key.toLowerCase()) result = tar;
-  }
-  return result;
-}
-
-const buttons = document.querySelectorAll('.btn');
-Array.from(buttons).forEach( x => {
-  x.addEventListener('click', event => {
-    keyInterceptor(event);
-  });
-  x.addEventListener('keydown', event => {
-    keyInterceptor(event);
-  })
-})
+const keyLogger = new KeyLogger('.btn', 'blue');

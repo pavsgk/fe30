@@ -31,7 +31,7 @@
 	}
 	</style>
 </head>
-<body onkeydown="keyInterceptor(event)">
+<body onkeydown="keyLogger.key = event.key" onclick="keyLogger.key = event.target.innerText">
 	<div class="btn-wrapper">
     <button class="btn">Enter</button>
 		<button class="btn">S</button>
