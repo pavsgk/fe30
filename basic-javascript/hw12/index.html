@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Banners</title>
+    <style>
+      .image-to-show {
+        width: 400px;
+        height: 400px;
+      }
+
+      .images-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .fadein {
+        animation: fadeIn 0.5s;
+        animation-fill-mode: forwards;
+      }
+      .fadeout {
+        animation: fadeOut 0.5s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="images-wrapper">
+      <img src="./img/1.jpg" alt="image of game" class="image-to-show" />
+      <img src="./img/2.jpg" alt="image of game" class="image-to-show" />
+      <img src="./img/3.JPG" alt="image of game" class="image-to-show" />
+      <img src="./img/4.png" alt="image of game" class="image-to-show" />
+    </div>
+    <button onclick="gallery.isRunning ? gallery.stop() : false">Прекратить</button>
+    <button onclick="!gallery.isRunning ? gallery.run() : false">Возобновить показ</button>
+    <p id="tmr"></p>
+    <script src="./js/images.js"></script>
+  </body>
+</html>
