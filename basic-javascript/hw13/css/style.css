@@ -1,0 +1,252 @@
+:root {
+  --col-link-green: #236D47;
+  --col-white: #FFFFFF;
+  --col-grey: #434343;
+  --col-dark: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+}
+
+body {
+  color: var(--col-white);
+  font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--col-white);
+}
+
+.wrapper {
+  background:  var(--col-dark), url('../img/bg.jpg') no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 16px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 22px;
+}
+.logo:hover {
+  color: var(--col-link-green)
+}
+
+.link-image path {
+  transition: fill 0.3s ease;
+}
+.link-image:hover path {
+  fill: var(--col-link-green)
+}
+
+.navmenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 25px;
+}
+.navmenu::after {
+  width: 1px;
+  height: 19px;
+  content: '';
+  display: block;
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0.5;
+  order: 2;
+}
+
+.navmenu-item {
+  order: 1;
+}
+
+.navmenu-login {
+  order: 3;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.navmenu-link:hover {
+  color: var(--col-link-green)
+}
+
+.modal {
+  position: relative;
+  max-width: 445px;
+  margin: 0 auto;
+  background-color: var(--col-white);
+  color: var(--col-grey);
+  padding: 30px 60px 38px;
+  display: grid;
+  grid-auto-flow: row;
+  top: calc((100% - 59px) / 2);
+  transform: translateY(-50%);
+}
+.modal::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 29px;
+  background-color: #3CB878;
+  width: 18px;
+  height: 18px;
+}
+.modal > input:focus {
+  outline: none;
+}
+
+
+.btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+}
+.btn.fb::before, .btn.google::before {
+  content: '';
+  order: 1;
+  height: 28px;
+  width: 1px;
+  background-color: #2B0D09;
+  opacity: 0.1;
+}
+.modal-social-name {
+  order: 2;
+}
+
+.google {
+  background-color: #DF4A32;
+}
+.google:hover {
+  background-color: #AB1F09;
+}
+
+.fb {
+  background-color: #305DB8;
+}
+.fb:hover {
+  background-color: #022263;
+}
+
+.green {
+  background-color: rgba(60, 184, 120, 0.8);
+}
+.green:hover {
+  background-color: #01813F;
+}
+
+.modal-sign {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: baseline;
+  row-gap: 15px;
+  column-gap: 8px;
+}
+.modal-title {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.modal-login {
+  color: #3CB878;
+  justify-self: end;
+}
+.modal-login:hover {
+  text-decoration: underline;
+  color: #01813F;
+}
+
+.hor-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2px;
+  margin-top: 27px;
+  margin-bottom: 10px;
+  color: #848484;
+  font-size: 14px;
+  line-height: 14px;
+  position: relative;
+}
+.hor-separator::before {
+  content: '';
+  height: 1px;
+  background-color: #F2F2F2;
+  width: 47%;
+  top: 8px;
+  left: 0;
+  position: absolute;
+}
+.hor-separator::after {
+  content: '';
+  height: 1px;
+  background-color: #F2F2F2;
+  width: 47%;
+  top: 8px;
+  right: 0;
+  position: absolute;
+}
+
+.modal-input {
+  margin-bottom: 15px;
+  border: 1px solid #F2F2F2;
+  border-radius: 4px;
+  color: var(--col-grey);
+  font-size: 14px;
+  line-height: 14px;
+  padding: 13px 20px;
+}
+.modal-input:focus {
+  background-color: #FFFFFF;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.21);
+  border-radius: 4px;
+}
+
+.modal-checkbox {
+  display: none;
+}
+.modal-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 6px;
+  margin-bottom: 20px;
+  font-family: Verdana, 'Ubuntu', sans-serif;
+  font-size: 14px;
+  color: var(--col-grey);
+}
+.modal-chekbox-status {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #F2F2F2;
+}
+.modal-checkbox:checked ~ .modal-chekbox-status {
+  background-image: url('../img/check.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.modal-link {
+  color: #3CB878;
+}
+.modal-link:hover {
+  text-decoration: underline;
+  color: #01813F;
+}
+
+.slowmo {
+  transition: all 0.3s ease
+}
