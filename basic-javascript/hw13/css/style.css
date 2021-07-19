@@ -1,18 +1,21 @@
 :root {
-  --col-link-green: #236D47;
-  --col-white: #FFFFFF;
-  --col-grey: #434343;
+  --col-link: #FFFFFF;
+  --col-link-hover: #236D47;
+  --col-bg: #FFFFFF;
+  --col-text1: #FFFFFF;
+  --col-text2: #434343;
   --col-dark: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  --col-head: rgba(0, 0, 0, 0.4);
 }
 
 body {
-  color: var(--col-white);
+  color: var(--col-bg);
   font-family: 'Ubuntu', sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: var(--col-white);
+  color: var(--col-link);
 }
 
 .wrapper {
@@ -20,10 +23,12 @@ a {
   background-size: cover;
   width: 100vw;
   height: 100vh;
+
 }
 
 header {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--col-head);
+  color: var(--col-text1);
   padding: 16px 80px;
   display: flex;
   justify-content: space-between;
@@ -37,14 +42,14 @@ header {
   line-height: 22px;
 }
 .logo:hover {
-  color: var(--col-link-green)
+  color: var(--col-link-hover);
 }
 
 .link-image path {
   transition: fill 0.3s ease;
 }
 .link-image:hover path {
-  fill: var(--col-link-green)
+  fill: var(--col-link-hover);
 }
 
 .navmenu {
@@ -74,15 +79,15 @@ header {
 }
 
 .navmenu-link:hover {
-  color: var(--col-link-green)
+  color: var(--col-link-hover);
 }
 
 .modal {
   position: relative;
   max-width: 445px;
   margin: 0 auto;
-  background-color: var(--col-white);
-  color: var(--col-grey);
+  background-color: var(--col-bg);
+  color: var(--col-text2);
   padding: 30px 60px 38px;
   display: grid;
   grid-auto-flow: row;
@@ -204,7 +209,7 @@ header {
   margin-bottom: 15px;
   border: 1px solid #F2F2F2;
   border-radius: 4px;
-  color: var(--col-grey);
+  color: var(--col-text2);
   font-size: 14px;
   line-height: 14px;
   padding: 13px 20px;
@@ -225,7 +230,7 @@ header {
   margin-bottom: 20px;
   font-family: Verdana, 'Ubuntu', sans-serif;
   font-size: 14px;
-  color: var(--col-grey);
+  color: var(--col-text2);
 }
 .modal-chekbox-status {
   display: inline-block;
