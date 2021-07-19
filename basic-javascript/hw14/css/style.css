@@ -23,6 +23,7 @@ body {
 }
 
 .to-top {
+  display: none;
   background-color: #313131;
   border: #F2F2F2;
   border-radius: 50%;
@@ -45,6 +46,10 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+#toggle-hide {
+  margin-top: 10px;
 }
 
 .logo {
