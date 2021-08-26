@@ -1,0 +1,26 @@
+.purch {
+  background-image: url(../img/purchase.jpg);
+  background-size: cover;
+}
+
+.purch > .container {
+  display: grid;
+  text-align: center;
+  justify-items: center;
+  padding: 126px 0;
+}
+
+.purch-title {
+  font-weight: bold;
+  font-size: 40px;
+  color: var(--col-cyan);
+  text-transform: uppercase;
+}
+
+.purch-text {
+  margin-top: 12px;
+  margin-bottom: 68px;
+  font-size: 16px;
+  line-height: 40px;
+  color: #D8D8D8;
+}

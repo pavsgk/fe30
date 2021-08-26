@@ -1,0 +1,68 @@
+.news {
+  padding-top: 85px;
+  padding-bottom: 130px;
+}
+
+.news-blog {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 45px 35px;
+}
+
+.news-post:hover .news-post-date {
+  background-color: var(--col-cyan);  
+}
+
+.news-post:hover .news-post-title {
+  transform: translateX(8px);
+  color: var(--col-cyan);
+}
+
+.news-post-pic { 
+  position: relative;
+}
+
+.news-post-date {
+  background-color: var(--col-green);
+  transition: background-color 0.3s ease-out;
+  position: absolute;
+  display: flex;
+  font-size: 16px;
+  color: var(--col-white);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+}
+
+.news-post-title {
+  transition: transform 0.3s ease-out, color 0.3s ease-out;
+  color: var(--col-grey);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.news-post-extra {
+  font-size: 14px;
+  font-weight: 300;
+  color: #777777;
+}
+
+.news-post-extra:first-of-type::after {
+  display: inline-block;
+  content: '|';
+  text-align: center;
+  width: 30px;
+}
+
+.news-post-content {
+  margin-top: 12px;
+  margin-left: 15px;
+}

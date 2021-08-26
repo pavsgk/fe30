@@ -1,0 +1,37 @@
+.fouropts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.fouropts-card {
+  padding-top: 90px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--col-cyan);
+  background-color: #1C2A33;
+  justify-content: space-between;
+  border-top: 8px var(--col-white) solid;
+  border-bottom: 8px var(--col-white) solid;
+}
+
+.fouropts-card:nth-child(2n) {
+  color: var(--col-white);
+  background-color: var(--col-cyan);
+}
+
+.fouropts-img {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.fouropts-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 47px;
+  text-transform: uppercase;
+}

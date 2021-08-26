@@ -1,0 +1,116 @@
+.work {
+  display: grid;
+  background-color: #E9EDEF;
+  padding: 95px 0;
+  justify-items: center;
+}
+
+.work-tabs {
+  display: grid;
+  grid-auto-flow: column;
+  text-align: center;
+  margin: 100px auto 0 auto;
+  max-width: 580px;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-filter {
+  color: var(--col-grey);
+  font-size: 14px;
+  padding: 18px 12px;
+  min-width: 77px;
+  border: 1px solid #DADADA;
+  cursor: pointer;
+}
+
+.work-filter.active {
+  color: var(--col-cyan);
+  border: 2px solid var(--col-cyan)
+}
+
+.work-cards {
+  padding: 70px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.work-card {
+  position: relative;
+  max-height: 210px;
+}
+
+.work-card>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  transition: opacity 0.3s linear;
+}
+
+.work-card:hover>img {
+  opacity: 0;
+}
+
+.work-card:hover>.work-card-hov {
+  opacity: 1;
+  border-top: 3px solid var(--col-cyan);
+}
+
+.work-card-hov {
+  display: grid;
+  grid-auto-flow: row;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  justify-items: center;
+  align-content: center;
+}
+
+.work-card-controls {
+  display: flex;
+  gap: 3px;
+}
+
+.work-card-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s linear;
+  border-radius: 50%;
+  border: 1px solid var(--col-cyan);
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.work-card-link:hover {
+  background-color: var(--col-cyan);
+}
+
+.work-card-link path,
+.work-card-link rect {
+  transition: fill 0.3s linear;
+}
+
+.work-card-link:hover path,
+.work-card-link:hover rect {
+  fill: var(--col-white);
+}
+
+.work-card-title {
+  margin-top: 40px;
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--col-cyan);
+}
+
+.work-card-category {
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #8A8A8A;
+}

@@ -1,0 +1,17 @@
+footer {
+  background: #22353F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 52px 0;
+}
+
+.copyright {
+  font-weight: 300;
+  font-size: 14px;
+  color: #AEAEAE;
+}
+
+.copyright > span {
+  color: var(--col-cyan);
+}

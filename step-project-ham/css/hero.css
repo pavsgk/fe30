@@ -1,0 +1,45 @@
+.hero {
+  display: grid;
+  align-content: center;
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 380px;
+  padding-bottom: 240px;
+  text-align: center;
+  color: var(--col-white);
+}
+
+.hero-title-small {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 35px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.hero-title-small > span {
+  color: var(--col-cyan);
+}
+
+.hero-title-big {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 78px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.hero-span {
+  font-family: Montserrat;
+  font-size: 34px;
+  margin-bottom: 135px;
+}
+
+.hero-buttons {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 25px;
+  margin: 0 auto;
+}
+

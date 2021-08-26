@@ -1,0 +1,19 @@
+.images {
+  padding-top: 105px;
+  padding-bottom: 70px;
+}
+
+.images-msn {
+  margin: 115px auto 50px;
+  max-width: 1160px;  
+}
+
+.images-msn-item {
+  width: 32%;
+  float: left;
+  padding-bottom: 15px;
+}
+
+.images-msn-item img {
+  width: 100%;
+}

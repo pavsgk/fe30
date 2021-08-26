@@ -1,0 +1,115 @@
+@import url(./fonts.css);
+@import url(./nav.css);
+@import url(./hero.css);
+@import url(./fouropts.css);
+@import url(./service.css);
+@import url(./purch.css);
+@import url(./work.css);
+@import url(./news.css);
+@import url(./clients.css);
+@import url(./images.css);
+@import url(./footer.css);
+
+:root {
+  --col-cyan: #18CFAB;
+  --col-green: #203E38;
+  --col-white: #FFFFFF;
+  --col-turquoise: #00CBF6;
+  --col-grey: #717171;
+}
+
+body {
+  font-family: Montserrat;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  user-select: none;
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.turquoise {
+  background-color: var(--col-turquoise);
+}
+.cyan {
+  background-color: var(--col-cyan);
+}
+
+.title {
+  color: #4E4E4E;
+  font-size: 36px;
+  text-align: center;
+  font-weight: normal;
+  position: relative;
+}
+
+.title::before {
+  position: absolute;
+  content: '';
+  width: 80px;
+  height: 1px;
+  background-color: var(--col-cyan);
+  bottom: -20px;
+  left: 49.5%;
+  transform: translateX(-50%);
+}
+
+.title::after {
+  position: absolute;
+  content: '';
+  width: 80px;
+  height: 1px;
+  background-color: var(--col-cyan);
+  bottom: -24px;
+  left: 50.5%;
+  transform: translateX(-50%);
+}
+
+.button {
+  cursor: pointer;
+  border: 0;
+  box-shadow: 0 -5px white;
+  border-radius: 5px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  height: 63px;
+  width: 168px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 32px;
+  text-align: center;
+  color: var(--col-white);
+}
+
+.button img {
+  height: 16px;
+  width: 16px;
+}
+
+.button:disabled > img,
+.button[disabled] > img {
+  height: 25px;
+  width: 25px;
+  content: url(../img/spinner2.gif);
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.noshadow {
+  box-shadow: initial;
+}
