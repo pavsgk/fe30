@@ -1,0 +1,29 @@
+{
+  "name": "project-x",
+  "version": "1.0.0",
+  "description": "Pavel Sapatsynskyi, FE30",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavsgk/fe30.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pavsgk/fe30/issues"
+  },
+  "homepage": "https://github.com/pavsgk/fe30#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "eslint": "^7.32.0",
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.0",
+    "moment": "^2.29.1"
+  }
+}
