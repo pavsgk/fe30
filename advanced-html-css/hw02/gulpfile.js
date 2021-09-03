@@ -1,23 +1,29 @@
-const gulp = require('gulp');
-const del = require('del');
-const sass = require('gulp-sass')(require('sass'));
+import gulp from 'gulp';
+import clean from 'gulp-clean';
+import autoprefixer from 'gulp-autoprefixer';
+import cleanCSS from 'gulp-clean-css';
 
-const watchDir = './src/**/*.*';
-const distDir = './dist';
-const cssSource = './src/scss/**/*.scss';
-const cssDest = './dist/css';
+import BS from 'browser-sync';
+const browserSync = BS.create();
 
-const cleanDist = (cb) => {
-  del.sync(`${distDir}/**`);
-  cb();
-}
+import gulpSass from 'gulp-sass';
+import dartSass from 'sass';
+const sass = gulpSass(dartSass);
 
-const sassCompile = () => gulp.src(cssSource)
-  .pipe(sass.sync().on('error', sass.logError))
-  .pipe(gulp.dest(cssDest));
+gulp.task('clean', () => gulp.src('dist/*', {read: false}).pipe(clean()));
+gulp.task('buildCss', () => gulp.src('src/scss/**/*')
+  .pipe(sass())
+  // .pipe(autoprefixer({cascade: false}))
+  .pipe(cleanCSS({compatibility: 'ie8'}))
+  .pipe(gulp.dest('dist/css')));
 
-const watch = () => gulp.watch(watchDir, gulp.series('clean', 'sass'));
+gulp.task('build', gulp.series('clean', 'buildCss'));
 
-gulp.task('clean', cleanDist);
-gulp.task('sass', sassCompile);
-gulp.task('watch', watch)
+gulp.task('dev', () => {
+  browserSync.init({
+    server: {
+      baseDir: "./"
+    }
+  });
+  gulp.watch(['src/**/*', 'index.html']).on('change', gulp.series('clean', 'buildCss', browserSync.reload));
+});
