@@ -1,0 +1,105 @@
+@media (min-width: $tab) {
+  .head {
+    @include margin-center;
+    margin-bottom: 0;
+    max-width: $tab * 0.8;
+    justify-content: space-between;
+
+    &__menu {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    &__link {
+      padding: 41px 0;
+      background-color: transparent;
+    }
+
+    &__link:hover {
+      background-color: transparent;
+    }
+    &__nav-btn {
+      display: none;
+    }
+
+    &__menu {
+      @include flex-betw;
+      background-color: #fff;
+    }
+  }
+
+  .hero {
+    min-height: 360px;
+    min-width: $tab;
+    margin-bottom: 56px;
+  }
+
+  .blog {
+    @include margin-center;
+    max-width: $tab;
+
+    &__title {
+      font-size: 16px;
+    }
+
+    &__post {
+      display: flex;
+    }
+    
+    &__post:last-child {
+      display: flex;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+    }
+
+    &__comment {
+      font-size: 12px;
+    }
+
+    &__content {
+      padding-left: 20px;
+    }
+    &__text {
+      display: block;
+    }
+  }
+
+  .insta {
+    background-color: #F7F7F7;
+    padding: 47px 0;
+
+    &__wrapper {
+      @include margin-center;
+      max-width: $tab;
+    }
+
+    &__constolrs {
+      margin-bottom: 35px;
+    }
+
+    &__link {
+      display: block;
+    }
+
+    &__title {
+      font-size: 16px;
+    }
+
+    &__img:nth-child(1n):not(:last-child) {
+      display: block;
+      width: 250px;
+    }
+  }
+
+  .foot {
+    padding: 57px 0;
+
+    &__contacts {
+      span {
+        display: none;
+      }
+    }
+  }
+}

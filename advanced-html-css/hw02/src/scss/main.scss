@@ -1,7 +1,6 @@
 @import "reset";
-@import "header";
-
-body {
-  font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
-}
+@import "variables";
+@import "mixins";
+@import "global";
+@import "mobile";
+@import "tab";
