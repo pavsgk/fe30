@@ -10,14 +10,22 @@ import gulpSass from 'gulp-sass';
 import dartSass from 'sass';
 const sass = gulpSass(dartSass);
 
-gulp.task('clean', () => gulp.src('dist/*', {read: false}).pipe(clean()));
-gulp.task('buildCss', () => gulp.src('src/scss/**/*')
+gulp.task('clean', () => gulp.src(['dist/css/*', 'dist/js/*'], {read: false}).pipe(clean()));
+gulp.task('buildCss', () => gulp.src('src/scss/**/*', {allowEmpty: true})
   .pipe(sass())
   // .pipe(autoprefixer({cascade: false}))
-  .pipe(cleanCSS({compatibility: 'ie8'}))
+  // .pipe(cleanCSS({compatibility: 'ie8'}))
   .pipe(gulp.dest('dist/css')));
 
-gulp.task('build', gulp.series('clean', 'buildCss'));
+gulp.task('buildJs', () => gulp.src('src/js/**/*', {allowEmpty: true})
+  .pipe(gulp.dest('dist/js')));
+
+gulp.task('buildImg', () => gulp.src('src/img/**/*', {allowEmpty: true})
+  .pipe(gulp.dest('dist/img')));
+
+
+
+gulp.task('build', gulp.series('clean', 'buildCss', 'buildJs', 'buildImg'));
 
 gulp.task('dev', () => {
   browserSync.init({
@@ -25,5 +33,5 @@ gulp.task('dev', () => {
       baseDir: "./"
     }
   });
-  gulp.watch(['src/**/*', 'index.html']).on('change', gulp.series('clean', 'buildCss', browserSync.reload));
+  gulp.watch(['src/**/*', 'index.html']).on('change', gulp.series('clean', 'buildCss', 'buildJs', /*'buildImg'*/ browserSync.reload));
 });

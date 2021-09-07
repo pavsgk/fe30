@@ -6,31 +6,81 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adaptive</title>
-  <!-- <link rel="stylesheet" href="./dist/css/reset.css"> -->
-  
+  <link rel="stylesheet" href="./dist/css/main.css">
+
 </head>
 
 <body>
   <header class="head">
-    <button class="head__nav-btn"></button>
-    <div class="head__mobile-menu">
-      <a href="/#" class="head__mobile-link"></a>
-      <a href="/#" class="head__mobile-link"></a>
-      <a href="/#" class="head__mobile-link"></a>
-      <a href="/#" class="head__mobile-link"></a>
-      <a href="/#" class="head__mobile-link"></a>
-      <a href="/#" class="head__mobile-link"></a>
-      <a href="/#" class="head__mobile-link"></a>
+    <div class="head__menu">
+      <a href="/#" class="head__link head__link--active">home</a>
+      <a href="/#" class="head__link">about us</a>
+      <a href="/#" class="head__link">our journal</a>
+      <a href="/#" class="head__link">projects</a>
+      <a href="/#" class="head__link">news</a>
+      <a href="/#" class="head__link">features</a>
+      <a href="/#" class="head__link">contact</a>
     </div>
+    <button class="head__nav-btn"></button>
   </header>
   <section class="hero"></section>
 
-  <main class="blog"></main>
+  <main class="blog">
+    <h3 class="blog__title">- our Recent posts</h3>
 
-  <section class="instagram"></section>
+    <div class="blog__post">
+      <img src="./dist/img/po1.jpg" alt="post1">
+      <p class="blog__subtitle">Aenean Adipiscing Etiam Vestibulum</p>
+      <p class="blog__comment">Photography, Journal / 9 Comments</p>
+      <p class="blog__text">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare sem lacinia quam
+        venenatis vestibulum.</p>
+    </div>
 
-  <footer class="contacts"></footer>
-  
+    <div class="blog__post">
+      <img src="./dist/img/po2.jpg" alt="post1">
+      <p class="blog__subtitle">Aenean Adipiscing Etiam Vestibulum</p>
+      <p class="blog__comment">Photography, Journal / 9 Comments</p>
+      <p class="blog__text">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare sem lacinia quam
+        venenatis vestibulum.</p>
+    </div>
+
+    <div class="blog__post">
+      <img src="./dist/img/po3.jpg" alt="post1">
+      <p class="blog__subtitle">Aenean Adipiscing Etiam Vestibulum</p>
+      <p class="blog__comment">Photography, Journal / 9 Comments</p>
+      <p class="blog__text">Etiam porta sem malesuada euismod. Aenean leo quam. Pellentesque ornare sem lacinia quam
+        venenatis vestibulum.</p>
+    </div>
+
+  </main>
+
+  <section class="insta">
+    <div class="insta__controls">
+      <h3 class="insta__title">- Last Instagram Shot</h3>
+      <a href="/#" class="insta__link">go to our instagram page -</a>
+    </div>
+    <div class="insta__container">
+      <img class="insta__img" src="./dist/img/li1.jpg" alt="inst">
+      <img class="insta__img" src="./dist/img/li2.jpg" alt="inst">
+      <img class="insta__img" src="./dist/img/li3.jpg" alt="inst">
+      <img class="insta__img" src="./dist/img/li4.jpg" alt="inst">
+    </div>
+  </section>
+
+  <footer class="foot">
+    <h4 class="foot__title">- get in touch with us -</h4>
+    <p class="foot__text">Maecenas faucibus molli interdum. Cras mattis consectetur purus sitor amet sed donec malesuada
+      ullamcorper odio.</p>
+    <div class="foot__links">
+      <img src="./dist/img/RSS.png" alt="social">
+      <img src="./dist/img/Facebook.png" alt="social">
+      <img src="./dist/img/Twitter.png" alt="social">
+      <img src="./dist/img/Dribbble.png" alt="social">
+      <img src="./dist/img/Pinterest.png" alt="social">
+    </div>
+    <p class="foot__contacts">Moonshine St. 14-05 Light City <span>/&#10;&#13;</span>T. +00 (123) 456 78 90 <span>/&#10;&#13;</span>first.last@email.com</p>
+  </footer>
+  <script src="./dist/js/main.js"></script>
 </body>
 
 </html>
