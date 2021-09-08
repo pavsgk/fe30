@@ -96,6 +96,12 @@
   .foot {
     padding: 57px 0;
 
+    &__text {
+      span {
+        display: inline;
+      }
+    }
+
     &__contacts {
       span {
         display: none;

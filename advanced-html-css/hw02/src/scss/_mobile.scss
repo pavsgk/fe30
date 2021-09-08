@@ -168,6 +168,10 @@
     color: $lighter-text;
     margin-bottom: 26px;
     padding: 0 35px;
+    white-space: pre-line;
+    span {
+      display: none;
+    }
   }
 
   &__links {

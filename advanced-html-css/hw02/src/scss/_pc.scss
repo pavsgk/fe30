@@ -1,0 +1,39 @@
+@media (min-width: $pc) {
+  .head {
+    max-width: 710px;
+  }
+
+  .hero {
+    @include margin-center;
+    max-width: $pc-max;
+  }
+
+  .blog {
+    max-width: $pc-max;
+
+    &__container {
+      @include flex-betw;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    &__post {
+      max-width: $pc-max / 2.05;
+    }
+  }
+
+  .insta {
+    &__wrapper {
+      @include margin-center;
+      max-width: $pc-max;
+    }
+
+    &__img {
+      width: 285px !important;
+    }
+
+    &__img:last-child {
+      display: block;
+    }
+  }
+}
