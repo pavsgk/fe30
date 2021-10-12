@@ -1,4 +1,4 @@
-export default {
+const taskman = {
   preLoader: document.querySelector('.lds-hourglass'),
   timer: null,
   timeout: 500,
@@ -10,3 +10,5 @@ export default {
     }, this.timeout);
   }
 }
+
+export default taskman;

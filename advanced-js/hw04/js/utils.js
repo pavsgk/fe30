@@ -1,6 +1,6 @@
 import cache from "./cache.js";
 
-export function q(elm) {
+function q(elm) {
   if (this === window || this === undefined) {
     return document.querySelector(elm);
   } else {
@@ -9,10 +9,10 @@ export function q(elm) {
 }
 HTMLElement.prototype.q = q;
 
-export const generateLiList = (arr, targetObj) => arr.map(e => 
+const generateLiList = (arr, targetObj) => arr.map(e => 
   targetObj[e] ? `<li>${e}: ${targetObj[e]}</li>` : '').join('');
 
-export const fetchWithCache = async (url) => new Promise( (resolve, reject) => {
+const fetchWithCache = async (url) => new Promise( (resolve, reject) => {
   try {
     if (cache[url]) {
       resolve(cache[url]);
@@ -25,4 +25,6 @@ export const fetchWithCache = async (url) => new Promise( (resolve, reject) => {
   } catch (err) {
     reject(err);
   }
-})
+});
+
+export { q, generateLiList, fetchWithCache }

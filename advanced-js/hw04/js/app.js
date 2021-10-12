@@ -1,5 +1,5 @@
 import cache from './cache.js';
-import {q, generateLiList, fetchWithCache} from './utils.js';
+import { q, generateLiList, fetchWithCache } from './utils.js';
 import taskman from './taskman.js';
 cache.initLocal();
 

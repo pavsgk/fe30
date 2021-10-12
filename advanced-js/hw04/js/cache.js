@@ -1,4 +1,4 @@
-export default new Proxy(
+const cache = new Proxy(
   {
     _successfulReads: 0,
     _successfulWrites: 0,
@@ -33,4 +33,6 @@ export default new Proxy(
       return Reflect.get(target, prop, receiver);
     }
   }
-)
+);
+
+export default cache;
