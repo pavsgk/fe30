@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.film-card {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.film-card h2, .film-card h3 {
+  margin-bottom: 20px;
+}
+
+.film-card > p {
+  margin-bottom: 20px;
+}
+
+.film-card__cast {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 200px)
+}
+
+.char-card ul {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.char-card li {
+  list-style: none;
+  text-transform: capitalize;
+}
+
+.lds-hourglass {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  top: 50%;
+  opacity: 0.8;
+  transform: translate(-50%, -50%);  
+}
+
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid steelblue;
+  border-color: steelblue transparent steelblue transparent;    
+  animation: lds-hourglass 1.2s infinite;
+}
+
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+

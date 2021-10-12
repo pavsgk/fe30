@@ -5,68 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    /* * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    } */
-    
-    .movie-card__cast {
-      display: grid;
-      grid-template-columns: repeat(3, 250px)
-    }
-    .char-card li {
-      text-transform: capitalize;
-    }
-
-    .lds-hourglass {
-      display: inline-block;
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);  
-    }
-    .lds-hourglass:after {
-      content: " ";
-      display: block;
-      border-radius: 50%;
-      width: 0;
-      height: 0;
-      margin: 8px;
-      box-sizing: border-box;
-      border: 32px solid steelblue;
-      border-color: steelblue transparent steelblue transparent;    
-      animation: lds-hourglass 1.2s infinite;
-    }
-    @keyframes lds-hourglass {
-      0% {
-        transform: rotate(0);
-        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      }
-      50% {
-        transform: rotate(900deg);
-        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-      }
-      100% {
-        transform: rotate(1800deg);
-      }
-    }
-
-
-  </style>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <div class="lds-hourglass"></div>
-  <div class="container">
-    <div class="test"></div>
-  </div>
+  <div class="container"></div>
   <script src="./js/app.js" type="module"></script>
-  <!-- <script type="module">
-    import cache from './js/cache.js';
-    window.cache = cache;
-  </script> -->
 </body>
 </html>
