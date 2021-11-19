@@ -18,18 +18,22 @@ class App extends Component {
             alert('Done!');
             this.hideModal(0);
           }} />,
-          <Button text='Cancel' backgroundColor='#008CBA' onClick={() => {
+          <Button text='Cancel' backgroundColor='#e7e7e7' onClick={() => {
             alert('Canceled!');
             this.hideModal(0);
           }} />
         ]
       }, {
         id: 1,
-        title: 'Do you want to delete this file?',
-        text: 'Once you delete this file, it won’t be possible to undo this action. \n Are you sure you want to delete it?',
+        title: 'Are you shure want to exit?',
+        text: `Press 'confirm' button to continue`,
         isActive: false,
         hasCloseButton: true,
         hideFn: (id) => this.hideModal(id),
+        actions: [<Button text='Confirm' backgroundColor='white' onClick={() => {
+          alert('Ok');
+          this.hideModal(1);
+        }}></Button>]
       }
 
     ]
