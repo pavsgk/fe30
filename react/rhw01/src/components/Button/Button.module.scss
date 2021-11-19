@@ -1,0 +1,7 @@
+.Button {
+  border-radius: 5px;
+}
+
+.Button[style*="background-color: red;"] {
+  color: #FFF;
+}
