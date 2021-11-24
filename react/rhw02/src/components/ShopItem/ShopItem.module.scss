@@ -1,0 +1,23 @@
+.ShopItem {
+  border-radius: 15px;
+  padding: 5px;
+  position: relative;
+
+  img {
+    max-height: 200px;
+    object-fit: cover;
+    border: 1px solid gray;
+    border-radius: 15px;
+  }
+
+  svg {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    
+    path {
+      fill: gold;
+    }
+  }
+}
