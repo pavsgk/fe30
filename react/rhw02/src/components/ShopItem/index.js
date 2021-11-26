@@ -6,19 +6,15 @@ import { ReactComponent as FavSvgFalse } from './add-fav-false.svg';
 
 
 function ShopItem(props) {
-  const backgroundColor = randomHexColor(0.1);
-  const {name, price, image, sku, color, id} = props;
-  const isFav = localStorage.getItem(`isFav${id}`) === 'true' ? true : false
-  const [favoriteStatus, setFavoriteStatus] = useState(isFav);
+  const {name, price, image, sku, color, id, isFav, backgroundColor, toggleFav} = props;
 
   return (
     <div className={styles.ShopItem} style={{backgroundColor}}>
       <img src={image}></img>
       <div onClick={() => {
-        setFavoriteStatus(!favoriteStatus);
-        localStorage.setItem(`isFav${id}`, !favoriteStatus);
+        toggleFav(id);
       }}>
-        {favoriteStatus ? <FavSvgTrue /> : <FavSvgFalse />}
+        {isFav ? <FavSvgTrue /> : <FavSvgFalse />}
       </div>
       <div>
         <h3>{name}</h3>
