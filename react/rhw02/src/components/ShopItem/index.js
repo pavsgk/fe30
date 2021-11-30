@@ -6,7 +6,7 @@ import { ReactComponent as FavSvgFalse } from './add-fav-false.svg';
 
 
 function ShopItem(props) {
-  const {name, price, image, sku, color, id, isFav, backgroundColor, toggleFav} = props;
+  const {name, price, image, sku, color, id, isFav, backgroundColor, toggleFav, addCart} = props;
 
   return (
     <div className={styles.ShopItem} style={{backgroundColor}}>
@@ -24,6 +24,7 @@ function ShopItem(props) {
         </ul>
         <span>{price} ₴</span>
       </div>
+      <button onClick={() => addCart(id)}>Add to cart</button>
     </div>
   );
 }

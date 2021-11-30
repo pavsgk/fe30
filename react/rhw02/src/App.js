@@ -5,7 +5,7 @@ import randomHexColor from './utils/randomHexColor';
 
 const shopUrl = 'https://script.google.com/macros/s/AKfycbzEYFV5JBtD5d2D2swAs6i9n0SeqMxAgZRD-tJG6F3ONbSgF38kL4qeuJ-U-FMDebvxew/exec?';
 const shopUrlName = '___cakeShop';
-const backgroundColors = Array.from({ length: 100 }, () => randomHexColor(0.2));
+const backgroundColors = Array.from({ length: 100 }, () => randomHexColor(0.1));
 
 class App extends React.Component {
 
@@ -64,6 +64,8 @@ class App extends React.Component {
         count: 1 * count,
       });
     }
+    console.log(newState);
+    this.setState(newState);
   }
 
 
@@ -78,7 +80,7 @@ class App extends React.Component {
   render() {
     const { goods } = this.state;
     return (
-      <ShopPage goods={goods} toggleFav={(id) => this.toggleFav(id)} />
+      <ShopPage goods={goods} addCart={(id) => this.addCart(id)} toggleFav={(id) => this.toggleFav(id)} />
     );
   } 
 }

@@ -2,9 +2,14 @@
   border-radius: 15px;
   padding: 5px;
   position: relative;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   img {
-    max-height: 200px;
+    width: 240px;
+    height: 200px;
     object-fit: cover;
     border: 1px solid gray;
     border-radius: 15px;
