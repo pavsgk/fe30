@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import Modal from './components/Modal';
 import ShopPage from './pages/ShopPage';
 import randomHexColor from './utils/randomHexColor';
 
@@ -11,7 +12,10 @@ class App extends React.Component {
 
   state = {
     goods: [],
-    cart: []
+    cart: [],
+    modal: {
+      isActive: false,
+    }
   }
 
   componentDidMount() {
@@ -54,8 +58,8 @@ class App extends React.Component {
   }
 
   addCart(id, count = 1) {
-    const newState = [...this.cart];
-    const inCartIndex = this.cart.findIndex(({ id: currentId })=> id === currentId);
+    const newState = [...this.state.cart];
+    const inCartIndex = newState.findIndex(({ id: currentId })=> id === currentId);
     if (inCartIndex > -1) {
       newState[inCartIndex].count += 1 * count;
     } else {
@@ -64,23 +68,57 @@ class App extends React.Component {
         count: 1 * count,
       });
     }
-    console.log(newState);
-    this.setState(newState);
+    this.setCart(newState);
   }
 
-
+  setCart(newCart = []) {
+    this.setState({
+      cart: newCart,
+    });
+  }
 
   setGoods(newGoods = []) {
     this.setState({
       goods: newGoods,
+    });
+  }
+
+  showModal(actionFn, title, text, hasCloseButton = true) {
+    this.setState({
+      modal: {
+        isActive: true,
+        title,
+        text,
+        hasCloseButton,
+        actionFn,
+        hideFn: () => this.hideModal(),
+      }
     })
   }
 
+  hideModal() {
+    this.setState({
+      modal: {
+        isActive: false,
+      }
+    })
+  }
 
   render() {
-    const { goods } = this.state;
+    const { goods, modal } = this.state;
+    console.log(this.state);
     return (
-      <ShopPage goods={goods} addCart={(id) => this.addCart(id)} toggleFav={(id) => this.toggleFav(id)} />
+      <>
+        <ShopPage 
+          goods={goods} 
+          showModal={(actionFn, title, text, hasCloseButton) => 
+            this.showModal(actionFn, title, text, hasCloseButton)
+          }
+          addCart={(id) => this.addCart(id)} 
+          toggleFav={(id) => this.toggleFav(id)} 
+        />
+        {modal.isActive ? <Modal {...modal} /> : null}
+      </>
     );
   } 
 }
