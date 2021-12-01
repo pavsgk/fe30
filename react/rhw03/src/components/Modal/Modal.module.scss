@@ -1,0 +1,79 @@
+.ModalBackground {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Modal {
+  font-family: 'Open-sans', sans-serif;
+  background-color: lightgray;
+  border-radius: 10px;
+  max-width: 515px;
+
+  button {
+    cursor: pointer;
+  }
+}
+
+.ModalContent {
+  min-height: 185px;
+  display: flex;
+  padding: 0 30px;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  gap: 10px;
+  
+  p {
+    font-size: 20px;
+    line-height: 30px;
+    color: #000;
+  }
+  
+  .ModalControls {
+    display: flex;
+    justify-content: space-around;
+
+    button {
+      padding: 10px;
+      min-width: 60px;
+      border-radius: 10px;
+      font-size: 20px;
+
+      &:hover {
+        filter: drop-shadow(0 0 10px #4444dd)
+      }
+    }
+  }
+}
+
+.ModalHeader {
+  min-height: 70px;
+  padding: 0 30px;
+  background-color: rgba(0, 0, 0, .15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  h2 {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 60px;
+    color: #FFF;
+    -webkit-text-stroke: 1px black;
+  }
+
+  button {
+    font-size: 30px;
+    border: 0;
+    background-color: transparent;
+  }
+}
