@@ -2,19 +2,23 @@ import React from 'react';
 import './App.scss';
 import Modal from './components/Modal';
 import ShopPage from './pages/ShopPage';
-import randomHexColor from './utils/randomHexColor';
+// import randomHexColor from './utils/randomHexColor';
 
 const shopUrl = 'https://script.google.com/macros/s/AKfycbzEYFV5JBtD5d2D2swAs6i9n0SeqMxAgZRD-tJG6F3ONbSgF38kL4qeuJ-U-FMDebvxew/exec?';
 const shopUrlName = '___cakeShop';
-const backgroundColors = Array.from({ length: 100 }, () => randomHexColor(0.1));
+// const backgroundColors = Array.from({ length: 100 }, () => randomHexColor(0.1));
 
 class App extends React.Component {
+  constructor() {
+    super();
+    const rawCart = localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart'));
 
-  state = {
-    goods: [],
-    cart: [],
-    modal: {
-      isActive: false,
+    this.state = {
+      goods: [],
+      cart: rawCart || [],
+      modal: {
+        isActive: false,
+      }
     }
   }
 
@@ -30,7 +34,7 @@ class App extends React.Component {
   
       if (responce.length > 0) {
         responce.forEach(e => {
-          e.backgroundColor = backgroundColors[Number(e.id)];
+          // e.backgroundColor = backgroundColors[Number(e.id)];
           if (favorites[e.id] === true) {
             e.isFav = true;
             return;
@@ -68,6 +72,7 @@ class App extends React.Component {
         count: 1 * count,
       });
     }
+    localStorage.setItem('cart', JSON.stringify(newState));
     this.setCart(newState);
   }
 
@@ -106,7 +111,7 @@ class App extends React.Component {
 
   render() {
     const { goods, modal } = this.state;
-    console.log(this.state);
+
     return (
       <>
         <ShopPage 

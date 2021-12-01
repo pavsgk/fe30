@@ -1,6 +1,6 @@
 .ModalBackground {
   background-color: rgba(0, 0, 0, 0.3);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -12,7 +12,7 @@
 
 .Modal {
   font-family: 'Open-sans', sans-serif;
-  background-color: #E74C3C;
+  background-color: lightgray;
   border-radius: 5px;
   max-width: 515px;
 
@@ -32,7 +32,7 @@
   p {
     font-size: 15px;
     line-height: 30px;
-    color: #FFF;
+    color: #000;
   }
 }
 
