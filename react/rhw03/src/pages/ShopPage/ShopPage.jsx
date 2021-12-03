@@ -16,6 +16,7 @@ function ShopPage(props) {
             showModal={showModal}
           />
         )}
+        {!goods.length && <img src="./loader.gif" alt="loading store"/>}
       </section>
   );
 }

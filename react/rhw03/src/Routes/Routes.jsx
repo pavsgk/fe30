@@ -5,13 +5,18 @@ import CartPage from "../pages/CartPage";
 import FavPage from "../pages/FavPage";
 
 function Routes(props) {
-  const { goods, showModal, addCart, toggleFav } = props;
+  const { goods, showModal, addCart, removeCart, toggleFav } = props;
 
   return (
     <Switch>
 
       <Route exact path="/cart">
-        <CartPage/>
+        <CartPage
+          goods={goods} 
+          showModal={showModal}
+          removeCart={removeCart}
+          toggleFav={toggleFav} 
+        />
       </Route>
 
       <Route exact path="/fav">

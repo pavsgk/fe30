@@ -71,6 +71,17 @@ function App () {
     setCart(newState);
   }
 
+  const removeCart = (id) => {
+    if (!cart.length) return;
+    const newState = [...cart];
+    const inCartIndex = newState.findIndex(({ id: currentId })=> id === currentId);
+    if (inCartIndex !== 1) {
+      newState.splice(inCartIndex, 1);
+      localStorage.setItem('cart', JSON.stringify(newState));
+      setCart(newState);
+    }
+  }
+
   const hideModal = () => {
     setModal({ isActive: false, })
   }
@@ -89,7 +100,13 @@ function App () {
   return (
     <BrowserRouter>
       <Header/>
-      <Routes goods={goods} showModal={showModal} addCart={addCart} toggleFav={toggleFav}/>
+      <Routes 
+        goods={goods} 
+        showModal={showModal} 
+        addCart={addCart} 
+        removeCart={removeCart} 
+        toggleFav={toggleFav}
+      />
       {modal.isActive ? <Modal {...modal} /> : null}
     </BrowserRouter>
   );

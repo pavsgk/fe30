@@ -1,5 +1,8 @@
 .Header {
   display: flex;
+  position: fixed;
+  z-index: 999;
+  top: 0;
   justify-content: center;
   gap: 50px;
   align-items: center;
@@ -10,4 +13,10 @@
   a {
     color: #FFF;
   }
+}
+
+.HeaderDummy {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
 }

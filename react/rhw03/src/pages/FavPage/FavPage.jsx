@@ -15,6 +15,7 @@ function FavPage(props) {
             showModal={showModal}
           />
         )}
+        {goods.filter(({isFav}) => isFav).length > 0 || <h3>You don't have any items in favorites</h3>}
       </section>
     </div>
   )

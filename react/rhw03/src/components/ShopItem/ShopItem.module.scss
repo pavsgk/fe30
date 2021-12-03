@@ -25,4 +25,15 @@
       fill: firebrick;
     }
   }
+
+  button {
+    padding: 10px;
+    min-width: 60px;
+    border-radius: 10px;
+    font-size: 20px;
+
+    &:hover {
+      filter: drop-shadow(0 0 10px #4444dd)
+    }
+  }
 }
