@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.scss';
+import Header from './components/Header';
 import Modal from './components/Modal';
 import ShopPage from './pages/ShopPage';
+import Routes from './Routes/Routes';
 // import randomHexColor from './utils/randomHexColor';
 
 const shopUrl = 'https://script.google.com/macros/s/AKfycbzEYFV5JBtD5d2D2swAs6i9n0SeqMxAgZRD-tJG6F3ONbSgF38kL4qeuJ-U-FMDebvxew/exec?';
@@ -84,17 +87,11 @@ function App () {
   }
 
   return (
-    <>
-      <ShopPage 
-        goods={goods} 
-        showModal={(actionFn, title, text, hasCloseButton) => 
-          showModal(actionFn, title, text, hasCloseButton)
-        }
-        addCart={(id) => addCart(id)} 
-        toggleFav={(id) => toggleFav(id)} 
-      />
+    <BrowserRouter>
+      <Header/>
+      <Routes goods={goods} showModal={showModal} addCart={addCart} toggleFav={toggleFav}/>
       {modal.isActive ? <Modal {...modal} /> : null}
-    </>
+    </BrowserRouter>
   );
   
 }
