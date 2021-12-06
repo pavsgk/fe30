@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.scss';
+import { Provider } from 'react-redux';
 import Header from './components/Header';
 import Modal from './components/Modal';
 import Routes from './Routes/Routes';
@@ -97,17 +98,19 @@ function App () {
   }
 
   return (
-    <BrowserRouter>
-      <Header/>
-      <Routes 
-        goods={goods} 
-        showModal={showModal} 
-        addCart={addCart} 
-        removeCart={removeCart} 
-        toggleFav={toggleFav}
-      />
-      {modal.isActive ? <Modal {...modal} /> : null}
-    </BrowserRouter>
+    <Provider>
+      <BrowserRouter>
+        <Header/>
+        <Routes 
+          goods={goods} 
+          showModal={showModal} 
+          addCart={addCart} 
+          removeCart={removeCart} 
+          toggleFav={toggleFav}
+        />
+        {modal.isActive ? <Modal {...modal} /> : null}
+      </BrowserRouter>
+    </Provider>
   );
   
 }
