@@ -1,0 +1,2 @@
+export const GET_GOODS = 'GET_GOODS';
+export const TOGGLE_FAVOURITE_GOODS = 'TOGGLE_FAVOURITE_GOODS';

@@ -3,15 +3,19 @@ import styles from './ShopItem.module.scss';
 import { ReactComponent as FavSvgTrue } from './add-fav-true.svg';
 import { ReactComponent as FavSvgFalse } from './add-fav-false.svg';
 import PropTypes from 'prop-types';
-
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { toggleFavGoods } from '../../store/actionCreators';
 
 function ShopItem(props) {
+  const dispatch = useDispatch();
   const {name, price, image, sku, color, id, isFav, backgroundColor, toggleFav, addCart, removeCart, showModal} = props;
+  
   return (
     <div className={styles.ShopItem} style={{backgroundColor}}>
       <img src={image} alt={name}></img>
       <div onClick={() => {
-        toggleFav(id);
+        // toggleFav(id);
+        dispatch(toggleFavGoods(id));
       }}>
         {isFav ? <FavSvgTrue /> : <FavSvgFalse />}
       </div>

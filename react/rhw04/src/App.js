@@ -1,46 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.scss';
-import { Provider } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
 import Header from './components/Header';
 import Modal from './components/Modal';
 import Routes from './Routes/Routes';
-// import randomHexColor from './utils/randomHexColor';
+import { getGoods } from './store/actionCreators';
 
 const shopUrl = 'https://script.google.com/macros/s/AKfycbzEYFV5JBtD5d2D2swAs6i9n0SeqMxAgZRD-tJG6F3ONbSgF38kL4qeuJ-U-FMDebvxew/exec?';
 const shopUrlName = '___cakeShop';
 // const backgroundColors = Array.from({ length: 100 }, () => randomHexColor(0.1));
 
 function App () {
+  const dispatch = useDispatch()
+
+  const goods = useSelector( store => store.goods.items );
+
   const savedCart = localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart'));
 
-  const [goods, setGoods] = useState([]);
+  // const [goods, setGoods] = useState([]);
   const [cart, setCart] = useState(savedCart || []);
   const [modal, setModal] = useState({isActive: false});
 
-  useEffect(() => {
-    const prepareGoods = async () => {
-      const responce = await fetch(`${shopUrl}${shopUrlName}`)
-        .then(res => res.text())
-        .then(text => JSON.parse(text));
-  
-      const rawFavorites = localStorage.getItem('favorites');
-      const favorites = rawFavorites !== null ? JSON.parse(rawFavorites) : [];
-  
-      if (responce.length > 0) {
-        responce.forEach(e => {
-          // e.backgroundColor = backgroundColors[Number(e.id)];
-          if (favorites[e.id] === true) {
-            e.isFav = true;
-            return;
-          }
-          e.isFav = false;
-        })
-      };
-      setGoods(responce);
-    }
-    prepareGoods();
-  },[]);
+  useEffect(() => dispatch(getGoods()),[]);
    
   const toggleFav = (id) => {
     const newState = [...goods];
@@ -53,7 +36,7 @@ function App () {
     });
 
     localStorage.setItem('favorites', JSON.stringify(localStorageNewState));
-    setGoods(newState);
+    // setGoods(newState);
   }
 
   const addCart = (id, count = 1) => {
@@ -98,19 +81,17 @@ function App () {
   }
 
   return (
-    <Provider>
-      <BrowserRouter>
-        <Header/>
-        <Routes 
-          goods={goods} 
-          showModal={showModal} 
-          addCart={addCart} 
-          removeCart={removeCart} 
-          toggleFav={toggleFav}
-        />
-        {modal.isActive ? <Modal {...modal} /> : null}
-      </BrowserRouter>
-    </Provider>
+    <BrowserRouter>
+      <Header/>
+      <Routes 
+        goods={goods} 
+        showModal={showModal} 
+        addCart={addCart} 
+        removeCart={removeCart} 
+        toggleFav={toggleFav}
+      />
+      {modal.isActive ? <Modal {...modal} /> : null}
+    </BrowserRouter>
   );
   
 }
