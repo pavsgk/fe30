@@ -15,29 +15,14 @@ const shopUrlName = '___cakeShop';
 function App () {
   const dispatch = useDispatch()
 
-  const goods = useSelector( store => store.goods.items );
+  const [goods, modal] = useSelector( store => [store.goods.items, store.modal] );
 
   const savedCart = localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart'));
 
   // const [goods, setGoods] = useState([]);
   const [cart, setCart] = useState(savedCart || []);
-  const [modal, setModal] = useState({isActive: false});
 
   useEffect(() => dispatch(getGoods()),[]);
-   
-  const toggleFav = (id) => {
-    const newState = [...goods];
-    const localStorageNewState = {};
-    newState.forEach(e => {
-      if (e.id === id) {
-        e.isFav = !e.isFav;
-      }
-      localStorageNewState[e.id] = e.isFav;
-    });
-
-    localStorage.setItem('favorites', JSON.stringify(localStorageNewState));
-    // setGoods(newState);
-  }
 
   const addCart = (id, count = 1) => {
     const newState = [...cart];
@@ -65,32 +50,11 @@ function App () {
     }
   }
 
-  const hideModal = () => {
-    setModal({ isActive: false, })
-  }
-
-  const showModal = (actionFn, title, text, hasCloseButton = true) => {
-    setModal({
-      isActive: true,
-      title,
-      text,
-      hasCloseButton,
-      actionFn,
-      hideFn: () => hideModal(),
-    });
-  }
-
   return (
     <BrowserRouter>
       <Header/>
-      <Routes 
-        goods={goods} 
-        showModal={showModal} 
-        addCart={addCart} 
-        removeCart={removeCart} 
-        toggleFav={toggleFav}
-      />
-      {modal.isActive ? <Modal {...modal} /> : null}
+      <Routes />
+      <Modal />
     </BrowserRouter>
   );
   

@@ -1,48 +1,45 @@
 import React from "react";
 import styles from './Modal.module.scss';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from "react-redux";
+import { hideModal } from "../../store/actionCreators";
 
 
-function Modal (props) {
+function Modal () {
+  
+  const dispatch = useDispatch();
 
-  const { actionFn, title, text, hasCloseButton, hideFn } = props;
+  const modal = useSelector(state => state.modal);
+
+  if (!modal.isShown) return null;
+
+  const { actionFn, title, text } = modal;
+  const hasCloseButton = true;
   const optionalCeneterd = {
     'justifyContent': hasCloseButton ? 'space-between' : 'center',
   }
 
+
   return (
-    <div className={styles.ModalBackground} onClick={() => hideFn()}>
+    <div className={styles.ModalBackground} onClick={() => dispatch(hideModal())}>
       <div className={styles.Modal} onClick={e => e.stopPropagation()}>
         <header className={styles.ModalHeader} style={optionalCeneterd}>
           <h2>{title}</h2>
-          {hasCloseButton && <button onClick={() => hideFn()}>&#10761;</button>}
+          {hasCloseButton && <button onClick={() => dispatch(hideModal())}>&#10761;</button>}
         </header>
         <div className={styles.ModalContent}>
           <p>{text}</p>
           <div className={styles.ModalControls}>
             <button onClick={() => {
               actionFn();
-              hideFn();
+              dispatch(hideModal())
             }}>Yes</button>
-            <button onClick={() => hideFn()}>No</button>
+            <button onClick={() => dispatch(hideModal())}>No</button>
           </div>
         </div>
       </div>
     </div>
   )
-}
-
-
-Modal.propTypes = {
-  actionFn: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  hideFn: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired,
-  hasCloseButton: PropTypes.bool,
-}
-
-Modal.defaultProps = {
-  hasCloseButton: true
 }
 
 export default Modal;

@@ -4,38 +4,22 @@ import ShopPage from "../pages/ShopPage";
 import CartPage from "../pages/CartPage";
 import FavPage from "../pages/FavPage";
 
-function Routes(props) {
+function Routes() {
   
-  const { goods, showModal, addCart, removeCart, toggleFav } = props;
 
   return (
     <Switch>
 
       <Route exact path="/cart">
-        <CartPage
-          goods={goods} 
-          showModal={showModal}
-          removeCart={removeCart}
-          toggleFav={toggleFav} 
-        />
+        <CartPage />
       </Route>
 
       <Route exact path="/fav">
-        <FavPage
-          goods={goods} 
-          showModal={showModal}
-          addCart={addCart} 
-          toggleFav={toggleFav} 
-        />
+        <FavPage />
       </Route>
 
       <Route exact path="/">
-        <ShopPage
-          goods={goods} 
-          showModal={showModal}
-          addCart={addCart} 
-          toggleFav={toggleFav}
-        />
+        <ShopPage />
       </Route>
 
       <Route path="*">

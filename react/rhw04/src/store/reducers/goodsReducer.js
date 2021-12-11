@@ -1,7 +1,9 @@
+import { saveFavouritesToLS } from "../../utils/handleLS";
 import { GET_GOODS, TOGGLE_FAVOURITE_GOODS } from "../actions";
 
 const initialState = {
   items: [],
+  favRerender: false,
 }
 
 const goodsReducer = (state = initialState, { type, payload }) => {
@@ -12,8 +14,12 @@ const goodsReducer = (state = initialState, { type, payload }) => {
     case TOGGLE_FAVOURITE_GOODS:
       const newItems = state.items;
       const targetId = newItems.findIndex(({ id }) => id === payload);
+
       if (targetId > -1) newItems[targetId].isFav = !newItems[targetId].isFav;
-      return {...state, items: newItems};
+
+      saveFavouritesToLS(newItems);
+
+      return {...state, items: newItems, favRerender: !state.favRerender};
 
     default:
       return state;

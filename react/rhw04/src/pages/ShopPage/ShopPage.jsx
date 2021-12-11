@@ -2,19 +2,20 @@ import React from 'react';
 import styles from "./ShopPage.module.scss";
 import ShopItem from '../../components/ShopItem';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
-function ShopPage(props) {
+function ShopPage() {
   
-  const { goods, toggleFav, addCart, showModal } = props;
+  const goods = useSelector(store => store.goods.items);
 
   return (
       <section className={styles.ShopPage}>
-        {goods.length > 0 && goods.map(e => 
+        {goods.length > 0 && goods.map((e, index) => 
           <ShopItem {...e} 
-            key={e.id} 
-            toggleFav={toggleFav} 
-            addCart={addCart}
-            showModal={showModal}
+            key={e.id}
+            index={index}
+            shop={true}
+            cart={false}
           />
         )}
         {!goods.length && <img src="./loader.gif" alt="loading store"/>}

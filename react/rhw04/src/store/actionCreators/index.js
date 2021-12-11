@@ -1,4 +1,5 @@
-import { GET_GOODS, TOGGLE_FAVOURITE_GOODS } from "../actions";
+import { updateFavouritesFromLS } from "../../utils/handleLS";
+import { ADD_ITEM_CART, GET_GOODS, HIDE_MODAL, SHOW_MODAL, TOGGLE_FAVOURITE_GOODS } from "../actions";
 import { baseShopUrl } from "../constants";
 
 export const getGoods = () => async dispatch => {
@@ -7,20 +8,15 @@ export const getGoods = () => async dispatch => {
     .then(res => res.text())
     .then(text => JSON.parse(text));
 
-  const rawFavorites = localStorage.getItem('favorites');
-  const favorites = rawFavorites !== null ? JSON.parse(rawFavorites) : [];
+  const goods = updateFavouritesFromLS(responce);
 
-  if (responce.length > 0) {
-    responce.forEach(e => {
-      if (favorites[e.id] === true) {
-        e.isFav = true;
-        return;
-      }
-      e.isFav = false;
-    })
-  }
-
-  dispatch({type: GET_GOODS, payload: responce});
+  dispatch({type: GET_GOODS, payload: goods});
 }
 
 export const toggleFavGoods = id => ({type: TOGGLE_FAVOURITE_GOODS, payload: id});
+
+export const addToCart = id => ({type: ADD_ITEM_CART, payload: id});
+
+export const showModal = (body) => ({type: SHOW_MODAL, payload: body});
+
+export const hideModal = () => ({type: HIDE_MODAL});

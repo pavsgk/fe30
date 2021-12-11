@@ -1,8 +1,11 @@
 import styles from "./CartPage.module.scss";
 import ShopItem from "../../components/ShopItem";
 import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 
 function CartPage(props) {
+
+  // const cart = useSelector()
   
   const { goods, toggleFav, removeCart, showModal } = props;
   const inCart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];

@@ -3,18 +3,18 @@ import styles from './ShopItem.module.scss';
 import { ReactComponent as FavSvgTrue } from './add-fav-true.svg';
 import { ReactComponent as FavSvgFalse } from './add-fav-false.svg';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { toggleFavGoods } from '../../store/actionCreators';
+import { useDispatch, useSelector } from 'react-redux';
+import { showModal, toggleFavGoods } from '../../store/actionCreators';
 
 function ShopItem(props) {
   const dispatch = useDispatch();
-  const {name, price, image, sku, color, id, isFav, backgroundColor, toggleFav, addCart, removeCart, showModal} = props;
-  
+  const {shop, cart, name, price, image, sku, color, id, backgroundColor, index} = props;
+  const isFav = useSelector(store => store.goods.items[index].isFav);
+
   return (
     <div className={styles.ShopItem} style={{backgroundColor}}>
       <img src={image} alt={name}></img>
       <div onClick={() => {
-        // toggleFav(id);
         dispatch(toggleFavGoods(id));
       }}>
         {isFav ? <FavSvgTrue /> : <FavSvgFalse />}
@@ -27,12 +27,12 @@ function ShopItem(props) {
         </ul>
         <span>{price} ₴</span>
       </div>
-      {addCart && <button onClick={() => 
-        showModal(() => addCart(id), 'Add to cart?', 'Are you sure want to add this to cart?')
-      }>Add to cart</button>}
-      {removeCart && <button onClick={() => 
-        showModal(() => removeCart(id), 'Remove from cart?', 'Are you sure want to remove this from cart?')
-      }>Remove from cart</button>}
+      {shop && <button onClick={() => {
+        dispatch(showModal({title: 'Add to cart?', text: 'Are you sure want to add this to cart?', actionFn: () => {}}));
+      }}>Add to cart</button>}
+      {cart && <button onClick={() => {
+        // showModal(() => removeCart(id), 'Remove from cart?', 'Are you sure want to remove this from cart?')
+      }}>Remove from cart</button>}
     </div>
   );
 }
