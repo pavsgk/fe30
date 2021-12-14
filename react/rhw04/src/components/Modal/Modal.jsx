@@ -1,11 +1,10 @@
 import React from "react";
 import styles from './Modal.module.scss';
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from "react-redux";
 import { hideModal } from "../../store/actionCreators";
 
 
-function Modal () {
+function Modal() {
   
   const dispatch = useDispatch();
 

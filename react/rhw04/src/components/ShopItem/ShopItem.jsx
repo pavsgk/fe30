@@ -4,7 +4,7 @@ import { ReactComponent as FavSvgTrue } from './add-fav-true.svg';
 import { ReactComponent as FavSvgFalse } from './add-fav-false.svg';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { showModal, toggleFavGoods } from '../../store/actionCreators';
+import { showModal, toggleFavGoods, addToCart, deleteFromCart } from '../../store/actionCreators';
 
 function ShopItem(props) {
   const dispatch = useDispatch();
@@ -28,10 +28,14 @@ function ShopItem(props) {
         <span>{price} ₴</span>
       </div>
       {shop && <button onClick={() => {
-        dispatch(showModal({title: 'Add to cart?', text: 'Are you sure want to add this to cart?', actionFn: () => {}}));
+        dispatch(showModal({title: 'Add to cart?', text: 'Are you sure want to add this to cart?', actionFn: () => {
+          dispatch(addToCart(id));
+        }}));
       }}>Add to cart</button>}
       {cart && <button onClick={() => {
-        // showModal(() => removeCart(id), 'Remove from cart?', 'Are you sure want to remove this from cart?')
+        dispatch(showModal({title: 'Remove from cart?', text: `Are you sure want to remove this sku (${sku}) from cart?`, actionFn: () => {
+          dispatch(deleteFromCart(id));
+        }}));
       }}>Remove from cart</button>}
     </div>
   );
@@ -43,11 +47,6 @@ ShopItem.propTypes = {
   image: PropTypes.string.isRequired,
   sku: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-
-  toggleFav: PropTypes.func.isRequired,
-  addCart: PropTypes.func,
-  removeCart: PropTypes.func,
-  showModal: PropTypes.func.isRequired,
 
   backgroundColor: PropTypes.string,
   isFav: PropTypes.bool,
