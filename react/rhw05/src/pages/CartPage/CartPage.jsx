@@ -2,6 +2,7 @@ import styles from "./CartPage.module.scss";
 import ShopItem from "../../components/ShopItem";
 import { useSelector, shallowEqual } from "react-redux";
 import CartCalc from "../../components/CartCalc";
+import CheckoutForm from "../../components/CheckoutForm";
 
 function CartPage() {
 
@@ -24,6 +25,7 @@ function CartPage() {
         {goods.filter(({id}) => inCartIds.includes(id)).length > 0 || <h3>You don't have any items in the cart</h3>}
       </section>
       <CartCalc />
+      <CheckoutForm />
     </div>
   )
 }

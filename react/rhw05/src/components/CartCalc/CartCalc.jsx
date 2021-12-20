@@ -8,11 +8,8 @@ function CartCalc () {
     return acc;
   }, {});
 
-  console.log(objGoods);
-
   const price = cart.map(e => {
     if (objGoods.hasOwnProperty(e.id)) {
-      console.log(parseFloat(objGoods[e.id].price));
       return parseFloat(objGoods[e.id].price) * e.count
     }
     return 0;})

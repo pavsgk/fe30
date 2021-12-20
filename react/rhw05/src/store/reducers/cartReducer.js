@@ -1,6 +1,6 @@
 // import from "../actions";
 
-import { ADD_ITEM_CART, DELETE_ITEM_CART } from "../actions";
+import { ADD_ITEM_CART, CLEAR_CART, DELETE_ITEM_CART } from "../actions";
 
 const initialState = {
   items: localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [],
@@ -34,6 +34,11 @@ const cartReducer = (state = initialState, { type, payload }) => {
       localStorage.setItem('cart', JSON.stringify(newItems));
       
       return {...state, items: newItems};
+    }
+
+    case CLEAR_CART: {
+      localStorage.setItem('cart', JSON.stringify([]));
+      return {...state, items: []};
     }
 
     default:
