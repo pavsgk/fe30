@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test Should component render 1`] = `
+<DocumentFragment>
+  <div
+    class="ShopItem"
+    style="background-color: lightgrey;"
+  >
+    <img
+      alt="Birhday"
+      src="https://media.istockphoto.com/photos/birthday-cake-picture-id812908632?k=20&m=812908632&s=612x612&w=0&h=r_HtCSEJe4vz2c-RX-rPChFY9l50nsl9PXdGRoqkJmQ="
+    />
+    <div>
+      <svg>
+        add-fav-true.svg
+      </svg>
+    </div>
+    <div>
+      <h3>
+        Birhday
+      </h3>
+      <ul>
+        <li>
+          Color: purple
+        </li>
+        <li>
+          SKU: bc101
+        </li>
+      </ul>
+      <span>
+        290.95 ₴
+      </span>
+      <p>
+         
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

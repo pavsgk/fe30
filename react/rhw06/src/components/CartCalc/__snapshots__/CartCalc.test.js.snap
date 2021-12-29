@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test Should component render 1`] = `
+<DocumentFragment>
+  <hr />
+  <h3>
+    TOTAL: 0.00
+  </h3>
+</DocumentFragment>
+`;

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test Should component render 1`] = `
+<DocumentFragment>
+  <div
+    class="ModalBackground"
+  >
+    <div
+      class="Modal"
+    >
+      <header
+        class="ModalHeader"
+        style="justify-content: space-between;"
+      >
+        <h2>
+          Test modal
+        </h2>
+        <button>
+          ⨉
+        </button>
+      </header>
+      <div
+        class="ModalContent"
+      >
+        <p>
+          This is a test modal
+        </p>
+        <div
+          class="ModalControls"
+        >
+          <button>
+            Yes
+          </button>
+          <button>
+            No
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test Should component render 1`] = `
+<DocumentFragment>
+  <header
+    class="Header"
+  >
+    <a
+      aria-current="page"
+      class="active"
+      href="/"
+    >
+       Shop
+    </a>
+    <a
+      href="/fav"
+    >
+      Favorites
+    </a>
+    <a
+      href="/cart"
+    >
+      Cart
+    </a>
+  </header>
+  <div
+    class="HeaderDummy"
+  />
+</DocumentFragment>
+`;

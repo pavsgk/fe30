@@ -1,14 +1,13 @@
-import CartCalc from "./CartCalc";
+import Header from "./Header";
 import { render } from "@testing-library/react";
-import { Provider } from "react-redux";
-import store from "../../store";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Snapshot test", () => {
   test("Should component render", () => {
     const { asFragment } = render(
-      <Provider store={store}>
-        <CartCalc />
-      </Provider>
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
     );
 
     expect(asFragment()).toMatchSnapshot();
