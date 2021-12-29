@@ -1,0 +1,71 @@
+[{
+  "id": 0,
+  "name": "Birhday",
+  "price": "290.95",
+  "image": "https://media.istockphoto.com/photos/birthday-cake-picture-id812908632?k=20&m=812908632&s=612x612&w=0&h=r_HtCSEJe4vz2c-RX-rPChFY9l50nsl9PXdGRoqkJmQ=",
+  "sku": "bc101",
+  "color": "purple"
+}, {
+  "id": 1,
+  "name": "Fruits",
+  "price": "270.40",
+  "image": "https://p0.pikrepo.com/preview/909/214/round-cake-on-white-background.jpg",
+  "sku": "fc211",
+  "color": "yellow"
+}, {
+  "id": 2,
+  "name": "Chococake",
+  "price": "199.99",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fd2gg9evh47fn9z.cloudfront.net%2F800px_COLOURBOX3391401.jpg&f=1&nofb=1",
+  "sku": "oc219",
+  "color": "brown"
+}, {
+  "id": 3,
+  "name": "Uber chocolate",
+  "price": "420.30",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.colourbox.com%2Fpreview%2F1928781-chocolate-cake-decorated-with-cherries-isolated-on-white-background.jpg&f=1&nofb=1",
+  "sku": "ch111",
+  "color": "black"
+}, {
+  "id": 4,
+  "name": "Monster high",
+  "price": "380.40",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0788%2F3321%2Fproducts%2Frozsaszin_torolt_masolata_2a1ec592-144c-44e3-92fd-834e1867410c_grande.jpg%3Fv%3D1468046685&f=1&nofb=1",
+  "sku": "se021",
+  "color": "pink"
+}, {
+  "id": 5,
+  "name": "Unicorn",
+  "price": "295.95",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.kowalskis.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Flarge%2Fpublic%2F2019-06%2Funicorn-cake.jpg%3Fitok%3DyeHn4Bdj&f=1&nofb=1",
+  "sku": "se038",
+  "color": "white"
+}, {
+  "id": 6,
+  "name": "Chocolate",
+  "price": "230.10",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fbirthday-chocolate-cake-with-colorful-candles-picture-id135200359%3Fk%3D6%26m%3D135200359%26s%3D170667a%26w%3D0%26h%3DBsbMXpBeZLkiVjhtyUcPVO19DoovR0l2iQpmVzfL29s%3D&f=1&nofb=1",
+  "sku": "ch231",
+  "color": "brown"
+}, {
+  "id": 7,
+  "name": "Fondant",
+  "price": "316.20",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdominosugar.com%2Femshare%2Fviews%2Fmodules%2Fasset%2Fdownloads%2Foriginals%2F2017%2F03%2F45377%2Frecipe_EasyFondant_410x328.jpg%2Frecipe_EasyFondant_410x328.jpg&f=1&nofb=1",
+  "sku": "fo104",
+  "color": "blue"
+}, {
+  "id": 8,
+  "name": "Strawberry",
+  "price": "275.80",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fd2gg9evh47fn9z.cloudfront.net%2F800px_COLOURBOX4547156.jpg&f=1&nofb=1",
+  "sku": "fc225",
+  "color": "red"
+}, {
+  "id": 9,
+  "name": "Chocofruit",
+  "price": "185.45",
+  "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fdelicious-fruit-green-cake-birthday-party-white-background-delicious-fruit-green-cake-birthday-party-white-108034250.jpg&f=1&nofb=1",
+  "sku": "fc283",
+  "color": "blue"
+}]
